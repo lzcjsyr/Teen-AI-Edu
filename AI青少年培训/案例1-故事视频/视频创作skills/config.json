@@ -1,11 +1,8 @@
 {
   "image": {
-    "provider": "doubao",
-    "model": "doubao-seedream-4-5-251128",
-    "width": 1728,
-    "height": 2304,
-    "max_retries": 5,
-    "timeout_seconds": 300,
+    "provider": "workbuddy",
+    "width": 1024,
+    "height": 1536,
     "watermark": false
   },
   "voice": {

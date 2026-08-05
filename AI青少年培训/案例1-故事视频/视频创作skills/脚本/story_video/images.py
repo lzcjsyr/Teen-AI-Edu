@@ -1,25 +1,21 @@
 from __future__ import annotations
 
-import base64
-import urllib.request
 from pathlib import Path
 from typing import Any
 
 from .common import (
     ensure_project_dirs,
-    http_json,
-    image_data_uri,
     load_json,
     require_command,
-    require_env,
     run_command,
     update_manifest,
 )
 from .project import find_single_input
 
 
-ARK_IMAGE_URL = "https://ark.cn-beijing.volces.com/api/v3/images/generations"
-
+# ---------------------------------------------------------------------------
+# Local-only helpers (no external API)
+# ---------------------------------------------------------------------------
 
 def _normalize_drawing(source: Path, target: Path) -> Path:
     if target.exists():
@@ -36,99 +32,38 @@ def _normalize_drawing(source: Path, target: Path) -> Path:
     return target
 
 
-def _generate_image(
-    *,
-    prompt: str,
-    references: list[Path],
-    output: Path,
+def _ensure_jfif_jpeg(
+    image_path: Path,
     config: dict[str, Any],
-) -> Path:
-    image_config = config["image"]
-    width = int(image_config["width"])
-    height = int(image_config["height"])
-    if width * height < 3_686_400:
-        raise RuntimeError("豆包当前要求图片至少 3686400 像素，请提高 config.json 中的尺寸。")
+) -> None:
+    """Re-save an image as a standard JFIF JPEG at the config size.
 
-    payload = {
-        "model": image_config["model"],
-        "prompt": prompt,
-        "image": [image_data_uri(path) for path in references],
-        "size": f"{width}x{height}",
-        "sequential_image_generation": "disabled",
-        "response_format": "b64_json",
-        "watermark": bool(image_config.get("watermark", False)),
-    }
-    data = http_json(
-        ARK_IMAGE_URL,
-        payload=payload,
-        headers={
-            "Authorization": f"Bearer {require_env('VOLCENGINE_API_KEY')}",
-            "Content-Type": "application/json",
-        },
-        timeout=int(image_config.get("timeout_seconds", 300)),
-        retries=int(image_config.get("max_retries", 2)),
-    )
-    item = (data.get("data") or [{}])[0]
-    raw = item.get("b64_json")
-    if raw:
-        image_bytes = base64.b64decode(raw)
-    elif item.get("url"):
-        import http.client
-        import urllib.error
-        import time
-        
-        image_bytes = None
-        max_download_retries = 10
-        for attempt in range(max_download_retries):
-            try:
-                req = urllib.request.Request(
-                    item["url"],
-                    headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
-                )
-                with urllib.request.urlopen(req, timeout=120) as response:
-                    image_bytes = response.read()
-                break
-            except Exception as err:
-                if attempt == max_download_retries - 1:
-                    raise
-                print(f"下载图片失败，正在重试 ({attempt + 1}/{max_download_retries})：{err}", flush=True)
-                time.sleep(5)
-        if not image_bytes:
-            raise RuntimeError("下载图片失败，未获取到数据。")
-    else:
-        raise RuntimeError("豆包接口没有返回图片。")
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_bytes(image_bytes)
-    return output
+    ImageGen outputs PNG files. The assistant may convert them to JPEG
+    using ffmpeg, but ffmpeg-produced JPEGs sometimes lack the JFIF
+    marker that python-docx requires for recognition. This function
+    uses PIL to re-save the image as a proper JFIF JPEG, resized to the
+    config dimensions (ensuring exact 3:4 aspect ratio).
 
+    If the image is already a proper JPEG at the right size, this is a
+    no-op (re-saves anyway for consistency, which is cheap).
+    """
+    from PIL import Image
 
-def _build_contact_sheet(scene_paths: list[Path], output: Path) -> Path:
-    require_command("ffmpeg")
-    command = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"]
-    for path in scene_paths:
-        command.extend(["-i", str(path)])
-    filters = []
-    for index in range(4):
-        filters.append(
-            f"[{index}:v]scale=540:720:force_original_aspect_ratio=increase,"
-            f"crop=540:720[s{index}]"
-        )
-    filters.append(
-        "[s0][s1][s2][s3]xstack=inputs=4:layout=0_0|540_0|0_720|540_720[v]"
-    )
-    command.extend([
-        "-filter_complex", ";".join(filters),
-        "-map", "[v]", "-frames:v", "1", "-q:v", "2", str(output),
-    ])
-    run_command(command)
-    return output
+    width = int(config["image"]["width"])
+    height = int(config["image"]["height"])
+
+    img = Image.open(image_path)
+    img = img.convert("RGB")
+    if img.size != (width, height):
+        img = img.resize((width, height), Image.LANCZOS)
+    img.save(image_path, "JPEG", quality=95)
 
 
 def _get_font(font_size: int) -> Any:
     from PIL import ImageFont
     import os
     import sys
-    
+
     if sys.platform.startswith("win"):
         windir = os.environ.get("windir", "C:\\Windows")
         candidates = [
@@ -144,34 +79,34 @@ def _get_font(font_size: int) -> Any:
             "/System/Library/Fonts/STHeiti Light.ttc",
             "/System/Library/Fonts/Supplemental/Songti.ttc",
         ]
-        
+
     for path in candidates:
         if os.path.exists(path):
             try:
                 return ImageFont.truetype(path, font_size)
             except Exception:
                 pass
-                
+
     # 尝试按名称直接加载系统安装过的字体
     for name in ["msyh", "Microsoft YaHei", "Arial Unicode MS", "PingFang SC", "SimHei"]:
         try:
             return ImageFont.truetype(name, font_size)
         except Exception:
             pass
-            
+
     return ImageFont.load_default()
 
 
 def _add_name_to_image(image_path: Path, name: str) -> None:
     from PIL import Image, ImageDraw, ImageFont
     import re
-    
+
     img = Image.open(image_path)
     width, height = img.size
-    
+
     font_size = max(24, int(width * 0.045))
     font = _get_font(font_size)
-        
+
     draw = ImageDraw.Draw(img)
     try:
         bbox = draw.textbbox((0, 0), name, font=font)
@@ -179,35 +114,35 @@ def _add_name_to_image(image_path: Path, name: str) -> None:
         text_h = bbox[3] - bbox[1]
     except AttributeError:
         text_w, text_h = draw.textsize(name, font=font)
-        
+
     padding_x = int(font_size * 0.6)
     padding_y = int(font_size * 0.3)
-    
+
     box_w = text_w + 2 * padding_x
     box_h = text_h + 2 * padding_y
-    
+
     box_x1 = (width - box_w) // 2
     box_y1 = height - int(height * 0.08) - box_h
     box_x2 = box_x1 + box_w
     box_y2 = box_y1 + box_h
-    
+
     overlay = Image.new("RGBA", img.size, (0, 0, 0, 0))
     overlay_draw = ImageDraw.Draw(overlay)
-    
+
     radius = int(box_h * 0.25)
     overlay_draw.rounded_rectangle(
         [box_x1, box_y1, box_x2, box_y2],
         radius=radius,
         fill=(0, 0, 0, 160)
     )
-    
+
     img_rgba = Image.alpha_composite(img.convert("RGBA"), overlay)
-    
+
     draw_final = ImageDraw.Draw(img_rgba)
     text_x = box_x1 + padding_x
     text_y = box_y1 + padding_y - int(font_size * 0.05)
     draw_final.text((text_x, text_y), name, fill=(255, 255, 255, 255), font=font)
-    
+
     img_rgba.convert("RGB").save(image_path, "JPEG")
 
 
@@ -303,8 +238,71 @@ def _generate_ending_slide(title: str, creator: str, output_path: Path, config: 
     img.save(output_path, "JPEG", quality=95)
 
 
+# ---------------------------------------------------------------------------
+# Image plan generation (replaces the old _generate_image API call)
+#
+# The assistant reads the plan printed by these functions, calls the
+# WorkBuddy ImageGen tool with the given prompt + reference image, and
+# saves the result to the specified output path. Then the script is run
+# again to perform local post-processing.
+# ---------------------------------------------------------------------------
+
+def _print_plan(label: str, prompt: str, reference: Path, output: Path, size: str) -> None:
+    """Print a structured plan entry the assistant can parse."""
+    print(f"\n{'='*60}")
+    print(f"IMAGE_PLAN_START")
+    print(f"label: {label}")
+    print(f"output: {output}")
+    print(f"reference: {reference}")
+    print(f"size: {size}")
+    print(f"prompt: {prompt}")
+    print(f"IMAGE_PLAN_END")
+    print(f"{'='*60}\n")
+
+
 def _character_reference_paths(paths: dict[str, Path], characters: list[dict[str, Any]]) -> list[Path]:
     return [paths["images"] / f"角色参考_{index}.jpg" for index, _ in enumerate(characters, 1)]
+
+
+def _build_prototype_prompt(
+    name: str,
+    char: dict[str, Any],
+    style: str,
+    non_human_guard: str,
+) -> str:
+    return (
+        "根据输入的原画制作一张角色原型图，供创作者先确认角色是否正确。"
+        f"角色名：{name}。"
+        f"外形：{char.get('appearance', '')}。"
+        f"特别之处：{char.get('special_ability', '')}。"
+        f"画面风格：{style}。"
+        f"{non_human_guard}"
+        "保留原画最有辨识度的轮廓、颜色、结构和朴拙手绘气质；单一角色完整入镜，"
+        "简单浅色背景，竖版3:4，无文字、无字幕、无水印。"
+    )
+
+
+def _build_scene_prompt(
+    scene_data: dict[str, Any],
+    characters: list[dict[str, Any]],
+    style: str,
+    non_human_guard: str,
+) -> str:
+    ref_descr = ""
+    for i, char in enumerate(characters, 1):
+        ref_descr += f"角色{i}：{char.get('name', '')}，外形：{char.get('appearance', '')}，特别之处：{char.get('special_ability', '')}。"
+
+    return (
+        f"这是创作者提供的原画，请参考其手绘风格。{ref_descr}"
+        "请生成包含上述角色的故事场景，"
+        "严格保留各个角色的辨识度、主要颜色、结构和手绘气质，不要重新设计角色。"
+        f"{non_human_guard}"
+        f"故事场景：{scene_data['visual_prompt']}。"
+        f"统一风格：{style}。"
+        "主体清楚，适合日常竖版故事分享，竖版3:4构图。所有动作只用画面表现，"
+        "不要把提示词、动作、声音或故事内容写在图片里；无文字、无字母、无数字、无字幕、无水印。"
+        f"最终硬性检查：{non_human_guard}"
+    )
 
 
 def _generate_character_references(
@@ -316,8 +314,17 @@ def _generate_character_references(
     config: dict[str, Any],
     force: bool,
 ) -> list[Path]:
-    """生成可单独审核的角色原型；场景生成阶段只复用这些已确认的文件。"""
+    """Generate character prototypes.
+
+    First run (images missing): prints IMAGE_PLAN for each missing character.
+    Second run (images placed by assistant): adds names, returns paths.
+    """
+    image_config = config["image"]
+    size_str = f"{int(image_config['width'])}x{int(image_config['height'])}"
+
     character_paths: list[Path] = []
+    missing_count = 0
+
     for idx, char in enumerate(characters, 1):
         name = char.get("name", f"角色_{idx}")
         subject_type = str(char.get("subject_type", "object")).strip().lower()
@@ -330,27 +337,44 @@ def _generate_character_references(
             )
 
         char_img_path = paths["images"] / f"角色参考_{idx}.jpg"
+        marker_path = paths["work"] / f"角色参考_{idx}.named"
+
         if force and char_img_path.exists():
             char_img_path.unlink()
+            if marker_path.exists():
+                marker_path.unlink()
+
         if not char_img_path.exists():
-            prompt = (
-                "根据输入的原画制作一张角色原型图，供创作者先确认角色是否正确。"
-                f"角色名：{name}。"
-                f"外形：{char.get('appearance', '')}。"
-                f"特别之处：{char.get('special_ability', '')}。"
-                f"画面风格：{style}。"
-                f"{non_human_guard}"
-                "保留原画最有辨识度的轮廓、颜色、结构和朴拙手绘气质；单一角色完整入镜，"
-                "简单浅色背景，竖版3:4，无文字、无字幕、无水印。"
+            prompt = _build_prototype_prompt(name, char, style, non_human_guard)
+            print(f"正在规划角色【{name}】的原型图……")
+            _print_plan(
+                label=f"角色原型_{name}",
+                prompt=prompt,
+                reference=normalized,
+                output=char_img_path,
+                size=size_str,
             )
-            print(f"正在生成角色【{name}】的原型图……")
-            _generate_image(prompt=prompt, references=[normalized], output=char_img_path, config=config)
+            missing_count += 1
+            character_paths.append(char_img_path)
+            continue
+
+        # Image exists — normalize to JFIF JPEG first, then do post-processing
+        if not marker_path.exists():
             try:
+                _ensure_jfif_jpeg(char_img_path, config)
                 _add_name_to_image(char_img_path, name)
-                print(f"已在角色【{name}】原型图上印写名字")
+                marker_path.touch()
+                print(f"已规范化并在角色【{name}】原型图上印写名字")
             except Exception as err:
-                print(f"在图片上印写角色【{name}】的名字失败：{err}")
+                print(f"处理角色【{name}】的原型图失败：{err}")
+        else:
+            print(f"角色【{name}】原型图已就绪，跳过。")
+
         character_paths.append(char_img_path)
+
+    if missing_count:
+        print(f"\n有 {missing_count} 张角色原型图待生成。请使用 WorkBuddy ImageGen 工具按上述计划生成，保存到指定路径后重新运行本命令。")
+
     return character_paths
 
 
@@ -360,7 +384,7 @@ def generate_prototypes(
     config: dict[str, Any],
     force: bool = False,
 ) -> list[Path]:
-    """第二阶段：只生成角色原型，让创作者确认后再生成四幕场景。"""
+    """第二阶段：只生成角色原型，让创作者确认后再生成场景。"""
     from .docx_helper import sync_docx_to_json
     sync_docx_to_json(project)
     paths = ensure_project_dirs(project)
@@ -378,7 +402,9 @@ def generate_prototypes(
         config=config,
         force=force,
     )
-    update_manifest(project, "prototype", outputs)
+    existing_outputs = [p for p in outputs if p.exists()]
+    if existing_outputs:
+        update_manifest(project, "prototype", existing_outputs)
     return outputs
 
 
@@ -409,25 +435,39 @@ def generate_images(
             + "。请先运行 prototype 生成并由创作者确认角色原型。"
         )
 
-    # 2. 场景图片生成
+    image_config = config["image"]
+    size_str = f"{int(image_config['width'])}x{int(image_config['height'])}"
+
+    # 1. Scene images
     selected = {scene} if scene else set(range(1, len(story["scenes"]) + 1))
     outputs: list[Path] = []
+    missing_count = 0
+
     for scene_data in story["scenes"]:
         index = int(scene_data["index"])
         output = paths["images"] / f"场景_{index:02d}.jpg"
         if index not in selected:
             if output.exists():
+                try:
+                    _ensure_jfif_jpeg(output, config)
+                except Exception:
+                    pass
                 outputs.append(output)
             continue
         if output.exists() and not force:
+            # Normalize to JFIF JPEG at config size (fixes ImageGen PNG/no-JFIF issues)
+            try:
+                _ensure_jfif_jpeg(output, config)
+            except Exception as err:
+                print(f"规范化第 {index} 幕图片时出错：{err}")
             print(f"第 {index} 幕图片已存在，跳过。")
             outputs.append(output)
             continue
-            
-        ref_descr = ""
-        for i, char in enumerate(characters, 1):
-            ref_descr += f"图{i+1}是角色【{char.get('name')}】的标准参考图。 "
-            
+
+        if force and output.exists():
+            output.unlink()
+
+        # Image missing — print plan for the assistant
         subject_type = str(characters[0].get("subject_type", "object")).strip().lower() if characters else "object"
         non_human_guard = ""
         if subject_type != "person":
@@ -436,37 +476,36 @@ def generate_images(
                 "不要添加人类头部、身体或操作者，不要把它改造成穿着该物体的人，也不要新增人类主角。"
                 "画面中不得出现任何人类、人形角色、人脸或人手。"
             )
-            
-        prompt = (
-            f"图1是创作者提供的原画。{ref_descr}请生成包含上述角色的故事场景，"
-            "严格保留各个角色的辨识度、主要颜色、结构 and 手绘气质，不要重新设计角色。"
-            f"{non_human_guard}"
-            f"故事场景：{scene_data['visual_prompt']}。"
-            f"统一风格：{style}。"
-            "主体清楚，适合日常竖版故事分享，竖版3:4构图。所有动作只用画面表现，"
-            "不要把提示词、动作、声音或故事内容写在图片里；无文字、无字母、无数字、无字幕、无水印。"
-            f"最终硬性检查：{non_human_guard}"
-        )
-        print(f"正在生成第 {index} 幕图片……")
-        _generate_image(
+
+        prompt = _build_scene_prompt(scene_data, characters, style, non_human_guard)
+        print(f"正在规划第 {index} 幕图片……")
+        _print_plan(
+            label=f"场景_{index:02d}",
             prompt=prompt,
-            references=[normalized] + character_paths,
+            reference=normalized,
             output=output,
-            config=config,
+            size=size_str,
         )
+        missing_count += 1
         outputs.append(output)
 
-    # 3. 动态生成结尾作品页图片
+    if missing_count:
+        print(f"\n有 {missing_count} 张场景图片待生成。请使用 WorkBuddy ImageGen 工具按上述计划生成，保存到指定路径后重新运行本命令。")
+
+    # 2. Ending slide (always generated locally, no external API needed)
     ending_path = paths["images"] / "结尾页.jpg"
     title = story.get("title", "未命名故事")
     creator = story.get("creator_display", "无名创作者")
     print(f"正在生成故事【{title}】结尾页（创作者：{creator}）……")
     try:
         _generate_ending_slide(title, creator, ending_path, config)
-        outputs.append(ending_path)
+        if ending_path not in outputs:
+            outputs.append(ending_path)
         print(f"结尾页生成完毕，已保存至: {ending_path}")
     except Exception as err:
         print(f"生成结尾页失败：{err}")
 
-    update_manifest(project, "images", outputs)
+    existing_outputs = [p for p in outputs if p.exists()]
+    if existing_outputs:
+        update_manifest(project, "images", existing_outputs)
     return outputs

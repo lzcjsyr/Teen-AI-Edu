@@ -180,7 +180,7 @@ def validate_story(story: dict[str, Any]) -> None:
     expected = list(range(1, len(scenes) + 1))
     actual = [scene.get("index") for scene in scenes]
     if actual != expected:
-        raise RuntimeError("四幕场景的 index 必须依次为 1、2、3、4。")
+        raise RuntimeError(f"场景的 index 必须依次为 1 到 {len(scenes)}。")
     for scene in scenes:
         if not str(scene.get("narration", "")).strip():
             raise RuntimeError(f"第 {scene['index']} 幕缺少 narration。")

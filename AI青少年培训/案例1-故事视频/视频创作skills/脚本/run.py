@@ -42,15 +42,15 @@ def preflight(config: dict) -> bool:
         found = shutil.which(command)
         statuses.append(bool(found))
         print(f"{command}: {'已安装' if found else '缺失'}")
-    for key in ("VOLCENGINE_API_KEY", "MIMO_API_KEY"):
+    for key in ("MIMO_API_KEY",):
         configured = bool(os.environ.get(key, "").strip())
         statuses.append(configured)
-        print(f"{key}: {'已配置' if configured else '缺失'}")
+        print(f"{key}: {'已配置' if configured else '缺失（仅生成文稿时可不配置）'}")
     width = int(config["image"]["width"])
     height = int(config["image"]["height"])
-    size_ok = width * height >= 3_686_400 and width * 4 == height * 3
-    statuses.append(size_ok)
-    print(f"豆包图片尺寸: {width}x{height} ({'通过' if size_ok else '不符合3:4或最低像素要求'})")
+    ratio_ok = width * 4 == height * 3
+    statuses.append(ratio_ok)
+    print(f"图片尺寸: {width}x{height} ({'通过' if ratio_ok else '不是3:4'})")
     video = config["video"]
     ratio_ok = int(video["width"]) * 4 == int(video["height"]) * 3
     statuses.append(ratio_ok)
@@ -82,14 +82,14 @@ def build_parser() -> argparse.ArgumentParser:
     add_project_argument(prototype)
     prototype.add_argument("--force", action="store_true", help="重新生成角色原型")
 
-    images = sub.add_parser("images", help="基于已确认的角色原型生成四幕故事配图")
+    images = sub.add_parser("images", help="基于已确认的角色原型生成故事配图")
     add_project_argument(images)
-    images.add_argument("--scene", type=int, choices=range(1, 5), help="只处理指定场景")
+    images.add_argument("--scene", type=int, help="只处理指定场景（从1开始）")
     images.add_argument("--force", action="store_true", help="覆盖已有结果")
 
     voice = sub.add_parser("voice", help="使用小米 MiMo 生成旁白音频")
     add_project_argument(voice)
-    voice.add_argument("--scene", type=int, choices=range(1, 5), help="只处理指定场景")
+    voice.add_argument("--scene", type=int, help="只处理指定场景（从1开始）")
     voice.add_argument("--force", action="store_true", help="覆盖已有结果")
     voice.add_argument("--preset", help="指定小米官方内置音色（如：冰糖、苏打、茉莉、白桦）")
 
