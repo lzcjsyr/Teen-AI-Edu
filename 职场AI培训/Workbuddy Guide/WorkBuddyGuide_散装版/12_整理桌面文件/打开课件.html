@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>第 12 章 从整理桌面文件这些小事做起</title>
+    <meta name="description" content="第 12 章 从整理桌面文件这些小事做起 · WorkBuddy 独立课件">
+    <meta name="generator" content="VitePress v1.6.4">
+    <link rel="stylesheet" href="./assets/style.D1dQEuLf.css" as="style">
+    <link rel="stylesheet" href="./vp-icons.css" as="style">
+    
+    <style>
+          /* 本地双击版本：保留原课件排版，隐藏无法在 file:// 下工作的交互控件。 */
+          .vp-doc .copy { display: none !important; }
+          .VPDocFooter .prev-next { display: none !important; }
+        </style>
+</head>
+  <body><!--teleport start anchor--><!----><!--teleport anchor-->
+    <div id="app"><div class="Layout" data-v-c4daae71><!--[--><!--]--><!--[--><span tabindex="-1" data-v-17ad389b></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-17ad389b>Skip to content</a><!--]--><!----><!----><div class="VPLocalNav empty fixed" data-v-c4daae71 data-v-9d8129cc><div class="container" data-v-9d8129cc><!----><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-9d8129cc data-v-d61422fe><button data-v-d61422fe>Return to top</button><!----></div></div></div><!----><div class="VPContent" id="VPContent" data-v-c4daae71 data-v-d2aef184><div class="VPDoc has-aside" data-v-d2aef184 data-v-ef3a4dda><!--[--><!--]--><div class="container" data-v-ef3a4dda><div class="aside" data-v-ef3a4dda><div class="aside-curtain" data-v-ef3a4dda></div><div class="aside-container" data-v-ef3a4dda><div class="aside-content" data-v-ef3a4dda><div class="VPDocAside" data-v-ef3a4dda data-v-79cae1a0><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-79cae1a0 data-v-dfbd9fb8><div class="content" data-v-dfbd9fb8><div class="outline-marker" data-v-dfbd9fb8></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-dfbd9fb8>本页目录</div><ul class="VPDocOutlineItem root" data-v-dfbd9fb8 data-v-da421f78><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-79cae1a0></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-ef3a4dda><div class="content-container" data-v-ef3a4dda><!--[--><!--]--><main class="main" data-v-ef3a4dda><div style="position:relative;" class="vp-doc _routes_12_case_file-organizing_" data-v-ef3a4dda><div><h1 id="第-12-章-从整理桌面文件这些小事做起" tabindex="-1">第 12 章 从整理桌面文件这些小事做起 <a class="header-anchor" href="#第-12-章-从整理桌面文件这些小事做起" aria-label="Permalink to &quot;第 12 章 从整理桌面文件这些小事做起&quot;">​</a></h1><h2 id="整理桌面发票-不再回电脑前翻文件" tabindex="-1">整理桌面发票，不再回电脑前翻文件 <a class="header-anchor" href="#整理桌面发票-不再回电脑前翻文件" aria-label="Permalink to &quot;整理桌面发票，不再回电脑前翻文件&quot;">​</a></h2><p>桌面发票是典型的“电脑在替人承受混乱”的场景：电子发票、截图、PDF、微信下载文件、邮件附件混在一起，命名方式各不相同。人不在电脑前时，最烦的不是不知道怎么报销，而是不知道哪几张发票已经在电脑里、哪些字段还缺、哪些文件可能重复。</p><h3 id="场景痛点" tabindex="-1">场景痛点 <a class="header-anchor" href="#场景痛点" aria-label="Permalink to &quot;场景痛点&quot;">​</a></h3><ul><li>发票散落在桌面、下载目录、微信文件目录，格式可能是 PDF、JPG、PNG。</li><li>文件名经常只叫“发票.pdf”“image.png”“微信图片_2026xxxx.jpg”。</li><li>报销真正需要的是结构化字段：抬头、税号、金额、开票日期、发票号码、销售方。</li><li>远程批量整理最怕误删、覆盖、移动原件，导致后面找不回来。</li></ul><div class="language-text vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">text</span><pre class="shiki shiki-themes github-light github-light vp-code" tabindex="0"><code><span class="line"><span>请帮我整理电脑里的发票，但不要删除、移动或覆盖原文件。</span></span>
+<span class="line"><span>扫描范围只包括桌面、Downloads 和微信文件接收目录，时间范围为最近 30 天。</span></span>
+<span class="line"><span>候选条件：文件名包含“发票”“电子发票”“invoice”，或内容识别为发票的 PDF、JPG、PNG。</span></span>
+<span class="line"><span>第一步先返回候选清单和数量。</span></span>
+<span class="line"><span>第二步识别抬头、税号、金额、开票日期、发票号码、销售方、文件路径。</span></span>
+<span class="line"><span>第三步生成 invoice-ledger.xlsx，并列出“重复发票”和“无法识别字段”的人工确认清单。</span></span></code></pre></div><p>执行后仅新增台账文件，桌面原发票不移动、不改名、不删除</p><p><img src="./assets/001_image_J9BUbk5hHo.f3JGw1H0.png" alt="" loading="lazy"></p></div></div></main><!----><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--teleport start--><!--teleport end--><!--]--></div></div>
+    </body>
+</html>

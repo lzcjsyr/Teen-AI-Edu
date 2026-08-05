@@ -1,0 +1,33 @@
+{
+  "input_file": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/饭堂4月进货明细.xls",
+  "file_type": ".xls",
+  "sheet_names": [
+    "Sheet1"
+  ],
+  "sheet": "Sheet1",
+  "header_row": 1,
+  "data_start_row": 2,
+  "data_end_row": 1171,
+  "total_row": 1172,
+  "columns": {
+    "item_name": 4,
+    "amount": 8
+  },
+  "headers": [
+    "序号",
+    "日期",
+    "单位名称",
+    "单据类型",
+    "商品名称",
+    "单价",
+    "实收数量",
+    "单位",
+    "金额",
+    "备注"
+  ],
+  "title": "珠海市酩悦商贸有限公司销售明细",
+  "notes": [
+    "跳过合计行、重复表头和无商品名称的说明/空行",
+    "分类列插入在动态识别的金额列之后"
+  ]
+}

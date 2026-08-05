@@ -1,0 +1,1901 @@
+{
+  "20升元宝调和油": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 176.0
+  },
+  "3两黄花鱼杀净": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 153.0
+  },
+  "三全大油条800g*包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "面制或米制主食/熟制主食",
+    "count": 16,
+    "amount": 264.0
+  },
+  "三黄鸡-杀净": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 24,
+    "amount": 2728.32
+  },
+  "东华热狗肠2.5kg": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 144.0
+  },
+  "中山香山米粉*30包*袋": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 2,
+    "amount": 210.0
+  },
+  "中芥兰": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 4.29
+  },
+  "中邦桂林辣椒酱6kg": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 2,
+    "amount": 186.0
+  },
+  "九芽生菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 7,
+    "amount": 11.2
+  },
+  "云南小瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 30.24
+  },
+  "云耳": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 5,
+    "amount": 215.0
+  },
+  "五指毛桃": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 14.35
+  },
+  "五花肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 7,
+    "amount": 661.2
+  },
+  "五花肉片": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 18,
+    "amount": 821.55
+  },
+  "京葱": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 38.25
+  },
+  "亮净快速去重油剂1L": {
+    "code": "1403.01.07",
+    "subject": "低值易耗",
+    "confidence": "high",
+    "review": false,
+    "reason": "厨房清洁或非食材消耗品",
+    "count": 1,
+    "amount": 21.0
+  },
+  "仔姜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 34.1
+  },
+  "伊利纯牛奶250ml*16盒*件": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "high",
+    "review": false,
+    "reason": "乳饮、植物饮品、饮料或酒类原料",
+    "count": 2,
+    "amount": 168.0
+  },
+  "伊利草莓优酸乳1*24*件": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "high",
+    "review": false,
+    "reason": "乳饮、植物饮品、饮料或酒类原料",
+    "count": 2,
+    "amount": 74.0
+  },
+  "优发河粉": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 13,
+    "amount": 212.5
+  },
+  "佳霖白胡椒粉400g*包": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 15.0
+  },
+  "八角": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 23.0
+  },
+  "冬瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 12,
+    "amount": 198.0
+  },
+  "冬菇青菜包6个": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "面制或米制主食/熟制主食；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 4,
+    "amount": 144.0
+  },
+  "冻有籽多春鱼": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 129.5
+  },
+  "凤球唛番茄沙司660g*12": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 17.4
+  },
+  "切片猪肝（加工）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 52.65
+  },
+  "包装龙口粉丝200g": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 4,
+    "amount": 18.0
+  },
+  "北方馒头1040g*16个*包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "面制或米制主食/熟制主食",
+    "count": 1,
+    "amount": 32.0
+  },
+  "南姜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 7,
+    "amount": 37.6
+  },
+  "去皮丝瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 130.2
+  },
+  "去皮八两红心番薯": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 23.01
+  },
+  "去皮南瓜（老身）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 88.11
+  },
+  "去皮完整香芋": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 9,
+    "amount": 370.5
+  },
+  "去皮白萝卜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 10.92
+  },
+  "去皮莴笋加工": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 9,
+    "amount": 336.5
+  },
+  "去皮青瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 28.35
+  },
+  "咸菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 28.0
+  },
+  "嘉文盐焗鸡粉200g*盒": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 10.5
+  },
+  "围裙": {
+    "code": "1403.01.07",
+    "subject": "低值易耗",
+    "confidence": "high",
+    "review": false,
+    "reason": "厨房清洁或非食材消耗品",
+    "count": 1,
+    "amount": 60.0
+  },
+  "土豆": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 12,
+    "amount": 171.19
+  },
+  "地都冬菜500g*6": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 84.0
+  },
+  "外地丝瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 11,
+    "amount": 261.6
+  },
+  "外地凉瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 16,
+    "amount": 357.79
+  },
+  "外地生菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 23,
+    "amount": 81.52
+  },
+  "外地茄瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 6,
+    "amount": 249.6
+  },
+  "外地西兰花": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 8,
+    "amount": 262.15
+  },
+  "外地西芹": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 14,
+    "amount": 144.7
+  },
+  "外地豆角": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 9,
+    "amount": 310.04
+  },
+  "外地麦菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 73.2
+  },
+  "大海罗非鱼": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 5,
+    "amount": 840.0
+  },
+  "大白色打包袋30厘米*45厘米*扎": {
+    "code": "1403.01.06",
+    "subject": "包装类",
+    "confidence": "high",
+    "review": false,
+    "reason": "食品包装或保鲜耗材",
+    "count": 1,
+    "amount": 3.0
+  },
+  "大白菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 9,
+    "amount": 251.52
+  },
+  "大草鱼（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 100.0
+  },
+  "大豆饼/白豆干": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 4,
+    "amount": 168.0
+  },
+  "太阳鱼": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 3,
+    "amount": 354.6
+  },
+  "姜肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 13,
+    "amount": 233.32
+  },
+  "威猛先生厨房重污清洁剂": {
+    "code": "1403.01.07",
+    "subject": "低值易耗",
+    "confidence": "high",
+    "review": false,
+    "reason": "厨房清洁或非食材消耗品",
+    "count": 1,
+    "amount": 21.0
+  },
+  "孜然粉": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 4.4
+  },
+  "宁夏菜心": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 5,
+    "amount": 367.14
+  },
+  "安井烧卖2.5kg*包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "面制或米制主食/熟制主食；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 3,
+    "amount": 96.0
+  },
+  "家乐鸡鲜粉调味料450g*包": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 3,
+    "amount": 150.0
+  },
+  "家桐金桔油270g*瓶*24": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 17.0
+  },
+  "寿星山西老陈醋420ml*20/件": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 62.0
+  },
+  "小白菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 204.2
+  },
+  "小虾米": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 8.4
+  },
+  "山水豆腐": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 34.0
+  },
+  "带皮玉米棒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 24,
+    "amount": 153.03
+  },
+  "干土茯苓": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 12.0
+  },
+  "干腐竹": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 5,
+    "amount": 116.0
+  },
+  "干葱头肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 19.8
+  },
+  "干香菇/冬菇": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 90.0
+  },
+  "平包菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 6,
+    "amount": 145.46
+  },
+  "微厨芝麻调味油（芝麻香油）4.3L": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 61.0
+  },
+  "微厨辣椒油4.3L": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 3,
+    "amount": 195.0
+  },
+  "打氧中大虾30-35头": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 19,
+    "amount": 2150.0
+  },
+  "指天椒（泰椒）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 8,
+    "amount": 42.55
+  },
+  "散花菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 12,
+    "amount": 162.99
+  },
+  "新配方浓缩洗洁精20kg": {
+    "code": "1403.01.07",
+    "subject": "低值易耗",
+    "confidence": "high",
+    "review": false,
+    "reason": "厨房清洁或非食材消耗品",
+    "count": 4,
+    "amount": 288.0
+  },
+  "春菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 38.16
+  },
+  "普宁豆酱800g*6": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 4,
+    "amount": 151.2
+  },
+  "本地香芹": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 34.0
+  },
+  "杏鲍菇": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 5,
+    "amount": 60.4
+  },
+  "柠檬叶": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 5.0
+  },
+  "桂皮": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 6.5
+  },
+  "梅头瘦肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 19,
+    "amount": 284.2
+  },
+  "梅菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 35.0
+  },
+  "樱桃萝卜（水萝卜）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 8,
+    "amount": 14.7
+  },
+  "沙姜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 33.0
+  },
+  "河粉": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 8,
+    "amount": 119.0
+  },
+  "洪峰月金丝香米25kg*包": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 8,
+    "amount": 2480.0
+  },
+  "浩洋牌墨鱼饼500g*包": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 4,
+    "amount": 299.2
+  },
+  "海天上等蚝油6kg*2/件": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 76.0
+  },
+  "海天老抽1.9L": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 2,
+    "amount": 50.0
+  },
+  "海天酱油4.9L*2": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 4,
+    "amount": 192.5
+  },
+  "海带丝": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 6,
+    "amount": 159.0
+  },
+  "添添见大碗面4kg*件": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 2,
+    "amount": 66.0
+  },
+  "湖南椒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 17.2
+  },
+  "湖南腊肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 211.6
+  },
+  "湘山农夫小米辣2kg*包": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 7.5
+  },
+  "潮州小香芹苗": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 18,
+    "amount": 117.0
+  },
+  "潮州肉卷": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 32.0
+  },
+  "澳皇生肉包*12个/包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "面制或米制主食/熟制主食；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 3,
+    "amount": 91.2
+  },
+  "澳皇葱油花卷430g": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "面制或米制主食/熟制主食",
+    "count": 1,
+    "amount": 34.2
+  },
+  "牛碎腩": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 7,
+    "amount": 1073.0
+  },
+  "牛肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 16,
+    "amount": 2499.5
+  },
+  "狮子头10kg/件": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 90.0
+  },
+  "猪红": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 22,
+    "amount": 100.0
+  },
+  "猪肝": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 21,
+    "amount": 76.82
+  },
+  "猪脚": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 5,
+    "amount": 937.3
+  },
+  "玉米粒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 5,
+    "amount": 102.3
+  },
+  "生葱": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 24,
+    "amount": 235.96
+  },
+  "番茄": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 12,
+    "amount": 255.84
+  },
+  "番鸭（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 11,
+    "amount": 1948.7
+  },
+  "瘦肉丝": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 4,
+    "amount": 107.06
+  },
+  "瘦肉片": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 16,
+    "amount": 614.64
+  },
+  "瘦肉碎": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 19,
+    "amount": 492.64
+  },
+  "白糖": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 3,
+    "amount": 126.0
+  },
+  "白糯米": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 2,
+    "amount": 8.4
+  },
+  "白胡椒粒": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 22.5
+  },
+  "白茄瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 177.45
+  },
+  "白萝卜（山东）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 11,
+    "amount": 63.63
+  },
+  "砍猪脚": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 221.0
+  },
+  "福之泉食用调和油20升/桶": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 10,
+    "amount": 1750.0
+  },
+  "秋刀鱼（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 180.4
+  },
+  "糯米鸡*6只*包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "面制或米制主食/熟制主食；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 5,
+    "amount": 60.0
+  },
+  "紫包菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 16.8
+  },
+  "紫洋葱": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 11,
+    "amount": 87.2
+  },
+  "红尖椒（海南）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 21,
+    "amount": 497.5
+  },
+  "红彩椒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 17.6
+  },
+  "红心番薯": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 56.56
+  },
+  "红星二锅头52度": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "medium",
+    "review": true,
+    "reason": "乳饮、植物饮品、饮料或酒类原料；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 19.5
+  },
+  "红米": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 4,
+    "amount": 60.0
+  },
+  "红美人椒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 18.24
+  },
+  "红萝卜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 20,
+    "amount": 193.38
+  },
+  "细红薯粉条": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 1,
+    "amount": 7.8
+  },
+  "细红薯粉（淀粉）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 3,
+    "amount": 26.0
+  },
+  "维他奶原味24瓶*件": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 52.0
+  },
+  "绿裕黄灯笼辣椒酱700g": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 36.0
+  },
+  "绿豆芽": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 24,
+    "amount": 99.58
+  },
+  "美味鲜9度白醋500ml": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 4.9
+  },
+  "美味鲜白醋500ml*12支/件": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 40.0
+  },
+  "肉卷": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 22.0
+  },
+  "肉饼": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 8,
+    "amount": 436.5
+  },
+  "肠仔包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "面制或米制主食/熟制主食",
+    "count": 10,
+    "amount": 77.5
+  },
+  "肠仔烤面包": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "面制或米制主食/熟制主食",
+    "count": 1,
+    "amount": 11.2
+  },
+  "花生米": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 3,
+    "amount": 18.75
+  },
+  "苦肠": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 156.75
+  },
+  "苦菊": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 2.25
+  },
+  "草鱼（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 143.0
+  },
+  "莲花味精1kg*10": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 2,
+    "amount": 128.0
+  },
+  "葡式三文治": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "面制或米制主食/熟制主食；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 22,
+    "amount": 391.5
+  },
+  "蒜肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 21,
+    "amount": 410.04
+  },
+  "蒜肉1.5kg袋装": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 36.0
+  },
+  "蒜苔/蒜心": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 72.0
+  },
+  "蒜苗": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 16,
+    "amount": 71.99
+  },
+  "蓬盛橄榄菜450g*6": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 10.5
+  },
+  "虹五五重庆火锅底料150g*60": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 2,
+    "amount": 44.0
+  },
+  "西生菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 11.4
+  },
+  "谷粒多黑谷牛奶饮品250ml1*16盒*件": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "high",
+    "review": false,
+    "reason": "乳饮、植物饮品、饮料或酒类原料",
+    "count": 2,
+    "amount": 70.0
+  },
+  "豆腐卜（油豆腐）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 56.0
+  },
+  "赤小豆": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 4.25
+  },
+  "辣椒节": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 5,
+    "amount": 65.0
+  },
+  "酸菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 14,
+    "amount": 100.8
+  },
+  "酸豆角": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 24.0
+  },
+  "里脊肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 3,
+    "amount": 195.36
+  },
+  "金不换/九层塔": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 9.0
+  },
+  "金元宝优选莲花香米15kg": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 156.0
+  },
+  "金牌高达椰浆400ml*24": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "high",
+    "review": false,
+    "reason": "乳饮、植物饮品、饮料或酒类原料",
+    "count": 1,
+    "amount": 11.0
+  },
+  "金穗牌沙茶酱20KG/桶": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 283.0
+  },
+  "金针菇": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 74.39
+  },
+  "钢丝球30个*包": {
+    "code": "1403.01.07",
+    "subject": "低值易耗",
+    "confidence": "high",
+    "review": false,
+    "reason": "厨房清洁或非食材消耗品",
+    "count": 1,
+    "amount": 28.0
+  },
+  "铁棍淮山": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 54.6
+  },
+  "长保鲜膜45cm*400米": {
+    "code": "1403.01.06",
+    "subject": "包装类",
+    "confidence": "high",
+    "review": false,
+    "reason": "食品包装或保鲜耗材",
+    "count": 1,
+    "amount": 45.0
+  },
+  "长条2-3两红心番薯": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 61.8
+  },
+  "阳帆阳江豆豉400g*盒*36": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "油、酱、醋、糖、香辛料或复合调味品",
+    "count": 1,
+    "amount": 8.0
+  },
+  "雀巢三花淡奶410g": {
+    "code": "1403.01.05",
+    "subject": "饮品原料",
+    "confidence": "medium",
+    "review": true,
+    "reason": "乳饮、植物饮品、饮料或酒类原料；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 2,
+    "amount": 32.0
+  },
+  "青圆椒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 18.56
+  },
+  "青尖椒（海南)": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 16,
+    "amount": 190.2
+  },
+  "青瓜（山东）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 16,
+    "amount": 236.16
+  },
+  "靓烧鸭": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 7,
+    "amount": 459.6
+  },
+  "面粉": {
+    "code": "1403.01.03",
+    "subject": "主食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "米面粉类主食",
+    "count": 4,
+    "amount": 67.2
+  },
+  "韭菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 61.5
+  },
+  "韭黄": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 102.2
+  },
+  "风车生粉25kg": {
+    "code": "1403.01.04",
+    "subject": "粮油调味",
+    "confidence": "high",
+    "review": false,
+    "reason": "淀粉类烹饪原料",
+    "count": 1,
+    "amount": 285.0
+  },
+  "香菜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 21,
+    "amount": 208.98
+  },
+  "马蹄肉": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 5,
+    "amount": 31.5
+  },
+  "鲜九肚鱼（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 260.3
+  },
+  "鲜五花肉碎": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 6,
+    "amount": 208.15
+  },
+  "鲜冬菇（厚身）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 3,
+    "amount": 128.0
+  },
+  "鲜排骨": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 210.64
+  },
+  "鲜腐皮250g（20张）*包": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 1,
+    "amount": 22.0
+  },
+  "鲜豆皮（千张）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 6,
+    "amount": 32.4
+  },
+  "鲜鸡蛋*360个*件": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 8,
+    "amount": 1432.0
+  },
+  "鲜鸡骨架": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 20,
+    "amount": 342.5
+  },
+  "鸡中翅": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 3,
+    "amount": 351.9
+  },
+  "鸡脚": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 216.0
+  },
+  "鸡腿": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 85.88
+  },
+  "黄彩椒": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 14.4
+  },
+  "黄柠檬（散）": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 12.8
+  },
+  "黄瓜": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 1,
+    "amount": 42.0
+  },
+  "黄芽白": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 445.06
+  },
+  "黄豆": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 4,
+    "amount": 160.0
+  },
+  "黄豆芽": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 4,
+    "amount": 2.6
+  },
+  "黄骨鱼（杀净）": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 6,
+    "amount": 749.7
+  },
+  "黑米": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 4,
+    "amount": 51.6
+  },
+  "黑鱼片250g": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 18,
+    "amount": 608.0
+  },
+  "龙须菜500g*包": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "medium",
+    "review": true,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货；名称存在主食/干货/饮品边界，需要人工复核",
+    "count": 2,
+    "amount": 115.0
+  },
+  "（A级）莲藕": {
+    "code": "1403.01.02",
+    "subject": "蔬菜辅菜类",
+    "confidence": "high",
+    "review": false,
+    "reason": "蔬菜、豆制品、菌菇、腌菜或干货",
+    "count": 2,
+    "amount": 54.4
+  },
+  "（丰硕佳味）迷你肉串850g": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 2,
+    "amount": 148.5
+  },
+  "（润轩）德国咸猪手*20*件": {
+    "code": "1403.01.01",
+    "subject": "荤食类",
+    "confidence": "high",
+    "review": false,
+    "reason": "肉类、蛋类、海鲜或肉制品",
+    "count": 1,
+    "amount": 285.0
+  }
+}

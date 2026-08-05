@@ -1,0 +1,94 @@
+{
+  "skill_name": "course-ppt-builder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请帮我根据“智能体基础认知与实操入门”这个主题，先生成一份优创Hub AI 培训第一课的 Markdown 课程稿，先不要生成 PPT。",
+      "expected_output": "生成符合固定页标题格式的中文 Markdown 课程稿，并明确停在 Markdown 阶段等待用户确认。",
+      "files": [],
+      "expectations": [
+        "输出包含形如“#### 【第 N 页：页面标题】”的课程单元结构",
+        "内容面向没有 AI 基础的优创Hub 同事",
+        "回复明确说明先不生成图片或 PPT，等待用户确认"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "请用这份已经确认的课程 md 生成图片版 PPT，每页一张图，风格简洁商务。",
+      "expected_output": "先提取 Markdown 页内容，再逐页调用 image_gen 生成对应数量图片，最后合成 PPTX，并汇报路径和页数。",
+      "files": [
+        "evals/files/sample-course.md"
+      ],
+      "expectations": [
+        "运行或说明使用 extract_slide_briefs.py 提取页内容",
+        "逐页调用内置 image_gen 工具生成图片",
+        "每页图片为 16:9，风格要求简洁、干净、商务范",
+        "运行或说明使用 images_to_ppt.py 合成 PPTX",
+        "最终说明 Markdown、图片目录、PPTX 文件路径和总页数"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "把第5页改成四层结构，然后先给我 md 修改结果，不要继续生成 PPT。",
+      "expected_output": "只修改 Markdown 中第5页相关内容，不进入图片生成或 PPTX 合成阶段。",
+      "files": [
+        "evals/files/sample-course.md"
+      ],
+      "expectations": [
+        "只修改第5页或必要索引",
+        "第5页内容使用层级方式组织",
+        "回复明确说明没有继续生成图片或 PPT"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "这份课程 md 我确认了，继续做最后的成品。",
+      "expected_output": "不直接选择 PPTX 或 HTML，而是反问用户最终呈现形式。",
+      "files": [
+        "evals/files/sample-course.md"
+      ],
+      "expectations": [
+        "明确询问用户选择图片版 PPTX 还是 HTML 连续滚动分页课程页面",
+        "没有开始调用 image_gen",
+        "没有开始生成 HTML 文件",
+        "没有自作主张选择一种最终呈现方案"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "请把这份已经确认的课程 md 做成一个 HTML 文件，打开后可以一直往下拉，但每一页要有明显分割和统一页码，读者能看懂课程流程。",
+      "expected_output": "根据 Markdown 生成一个可直接打开的 HTML 文件，采用连续滚动分页课程网页结构；不固定 16:9，但每个 Markdown 页都对应一个完整横向页面区块。",
+      "files": [
+        "evals/files/sample-course.md"
+      ],
+      "expectations": [
+        "生成单文件 HTML 或说明 HTML 文件路径",
+        "每个 Markdown 课程单元都 1:1 对应一个 HTML 页面区块，顺序清楚",
+        "每个页面区块都有统一位置和统一格式的页码",
+        "页面连续滚动浏览，页与页之间有明显分割线、间距或背景分隔",
+        "每页横向独占完整可用宽度，没有两个课程页并排显示",
+        "生成 HTML 前先判断整体视觉方向和每页信息关系，不机械套固定模板",
+        "页面主标题、内容组件和底部结论与 Markdown 的页面设计相匹配，且不是整段 Markdown 堆叠",
+        "提示词、表格、流程、数字步骤等关键信息完整可读",
+        "生成 HTML 后进行浏览器截图抽查，并根据明显问题至少自我修复一轮",
+        "没有默认固定为 16:9 仿 PPT 画布",
+        "没有默认调用 image_gen 或合成 PPTX"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "请根据这份第一课课程 md 重新生成 HTML 课件。要求不同页面按内容使用不同版式，标题大小和位置要统一，不能再像随机卡片堆叠。",
+      "expected_output": "先判断整体视觉方向和每页信息关系，再生成连续滚动分页 HTML；页面构图、标题层级、主视觉和内容组件应与 Markdown 的页面设计对应。",
+      "files": [
+        "evals/files/sample-course.md"
+      ],
+      "expectations": [
+        "读取或遵循 html-page-templates.md 的轻量构图原则，但不机械套用固定模板",
+        "整体视觉统一，同时不同页面能根据内容关系自然变化",
+        "页面主标题来自 Markdown 的页面标题，并保持稳定的字号层级和位置规则",
+        "主视觉按 Markdown 的描述落实，不是统一卡片网格",
+        "生成后进行截图抽查和自我修复，检查标题层级、文本可读性和分页逻辑"
+      ]
+    }
+  ]
+}

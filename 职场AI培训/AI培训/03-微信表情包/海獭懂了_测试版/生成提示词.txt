@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: WeChat custom animated sticker storyboard, to be cut into GIF frames
+Primary request: original cute 2D cartoon sea otter (round face, brown fur, big eyes) reacting to "pretending to listen carefully, then zoning out, then nodding and saying I get it" in four beats: (panel 1) sitting upright with focused eyes, listening attentively to someone; (panel 2) eyes glazing over, pupils drifting upward, mouth slightly open, clearly daydreaming and zoning out; (panel 3) suddenly snapping back to attention, sharply nodding the head, eyes refocused with an "I see now" expression; (panel 4) confidently giving a thumbs-up and grinning, looping back to the attentive state of panel 1. The Chinese text "懂了" appears ONLY in panel 4.
+Style/medium: original polished 2D Chinese chat-sticker illustration, bold clean outlines, high-contrast flat colours, highly expressive face.
+Composition/framing: one perfectly regular 2 by 2 storyboard grid; four equal square panels; same character scale, viewpoint and placement; generous padding; thin pale-gray divider lines only.
+Scene/backdrop: ABSOLUTELY FLAT SOLID PURE WHITE #FFFFFF BACKGROUND IN EVERY PANEL, exact RGB(255,255,255) everywhere outside the character and text; character floats on pure white; no desk, floor, gradients, shadows, reflections, texture, decorative borders, panel labels, or off-white/cream tint.
+Text (verbatim): "懂了"
+Text design: large, bold, high-contrast Chinese lettering "懂了" placed in a clear empty area of panel 4 only; text must be correct and legible at 240 by 240 pixels.
+Constraints: each panel is a distinct sequential pose; preserve character identity (same otter in all four panels); NO WATERMARK; no "图片由AI生成" mark; no logos; no other characters unless the story needs them; all empty areas must be exactly #FFFFFF RGB(255,255,255).

@@ -1,0 +1,41 @@
+# 系统文件
+.DS_Store
+
+# 环境变量（含密钥，请勿提交）
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+
+# Node 依赖
+node_modules/
+
+# CodeBuddy 数据
+.workbuddy
+
+# ===== AI青少年培训 规则 =====
+AI青少年培训/output/*
+!AI青少年培训/output/.gitkeep
+AI青少年培训/input/*
+!AI青少年培训/input/.gitkeep
+AI青少年培训/sushi_wanganshi/
+AI青少年培训/苏轼与王安石/
+AI青少年培训/表情包/
+AI青少年培训/案例1-故事视频/*
+!AI青少年培训/案例1-故事视频/视频创作skills/
+!AI青少年培训/案例1-故事视频/原画故事视频Skill介绍.html
+
+# ===== 职场AI培训 规则 =====
+职场AI培训/线上媒体推广/视频创作/input/*
+!职场AI培训/线上媒体推广/视频创作/input/.gitkeep
+职场AI培训/线上媒体推广/视频创作/music/*
+!职场AI培训/线上媒体推广/视频创作/music/.gitkeep
+职场AI培训/线上媒体推广/视频创作/output/*
+!职场AI培训/线上媒体推广/视频创作/output/.gitkeep
+职场AI培训/线上媒体推广/笔记创作/output/*
+!职场AI培训/线上媒体推广/笔记创作/output/.gitkeep
+职场AI培训/线上媒体推广/长文创作/output/*
+!职场AI培训/线上媒体推广/长文创作/output/.gitkeep

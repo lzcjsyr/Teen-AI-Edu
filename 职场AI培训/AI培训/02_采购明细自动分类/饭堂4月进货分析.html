@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>饭堂4月进货分类分析报告</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans CJK SC", "WenQuanYi Micro Hei", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.header { 
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+.header h1 { font-size: 24px; margin-bottom: 8px; }
+.header p { font-size: 14px; opacity: 0.9; }
+.card { 
+    background: white;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.card h2 { 
+    font-size: 18px; 
+    margin-bottom: 16px; 
+    color: #2c3e50;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+}
+.stats-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.stat-item { 
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+.stat-value { 
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+.stat-label { 
+    font-size: 13px;
+    color: #666;
+}
+.charts { 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.chart-container { text-align: center; }
+.chart-title { font-size: 14px; color: #666; margin-bottom: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { 
+    background: #f8f9fa;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+}
+td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+tr:hover { background: #f8f9fa; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.footer { 
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+.badge { 
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.tabs { margin-bottom: 16px; }
+.tab-btn { 
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 6px 6px 0 0;
+    margin-right: 4px;
+}
+.tab-btn.active { background: #3498db; color: white; border-color: #3498db; }
+@media print {
+    body { background: white; }
+    .card { box-shadow: none; border: 1px solid #ddd; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🍽️ 饭堂4月进货分类分析报告</h1>
+        <p>基于固定7大科目分类标准 · 自动分类与汇总</p>
+    </div>
+
+    <div class="card">
+        <h2>📊 报告概览</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">¥44,218.51</div>
+                <div class="stat-label">进货总金额</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">1167</div>
+                <div class="stat-label">有效明细条数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">211</div>
+                <div class="stat-label">商品种类数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">7</div>
+                <div class="stat-label">科目分类数</div>
+            </div>
+        </div>
+        <p style="font-size:13px;color:#666;margin-top:10px;">
+            <strong>数据来源：</strong>饭堂4月进货明细_新.xls &nbsp;|&nbsp;
+            <strong>日期范围：</strong>2026-04-01 ~ 2026-04-30 &nbsp;|&nbsp;
+            <strong>分类覆盖率：</strong><span class="badge">100%</span>
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📈 科目金额分布</h2>
+        <div class="charts">
+            <div class="chart-container">
+                <div class="chart-title">金额占比（饼图）</div>
+                <svg width="400" height="280" viewBox="0 0 400 280"><path d="M140.0,140.0 L140.0,10.0 A130.0,130.0 0 1,1 112.3,267.0 Z" fill="#E74C3C" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L112.3,267.0 A130.0,130.0 0 0,1 11.3,121.6 Z" fill="#27AE60" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L11.3,121.6 A130.0,130.0 0 0,1 53.8,42.7 Z" fill="#F39C12" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L53.8,42.7 A130.0,130.0 0 0,1 123.9,11.0 Z" fill="#8E44AD" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L123.9,11.0 A130.0,130.0 0 0,1 131.4,10.3 Z" fill="#3498DB" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L131.4,10.3 A130.0,130.0 0 0,1 131.5,10.3 Z" fill="#95A5A6" stroke="#fff" stroke-width="2"/><path d="M140.0,140.0 L131.5,10.3 A130.0,130.0 0 0,1 140.0,10.0 Z" fill="#7F8C8D" stroke="#fff" stroke-width="2"/><text x="289.1" y="156.1" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#333">荤食类 53.4%</text><text x="16.8" y="225.6" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#333">蔬菜辅菜类 23.8%</text><text x="7.9" y="68.9" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#333">主食类 11.2%</text><text x="78.2" y="3.3" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="#333">粮油调味 9.6%</text></svg>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">各科目金额（柱状图）</div>
+                <svg width="590" height="250" viewBox="0 0 590 250"><line x1="0" y1="230" x2="590" y2="230" stroke="#ddd" stroke-width="1"/><rect x="30" y="20.0" width="50" height="210.0" fill="#E74C3C" rx="3"/><text x="55.0" y="245" text-anchor="middle" font-size="11" fill="#555">荤食类</text><text x="55.0" y="15.0" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥23,623</text><rect x="110" y="136.3163070321965" width="50" height="93.68369296780348" fill="#27AE60" rx="3"/><text x="135.0" y="245" text-anchor="middle" font-size="11" fill="#555">蔬菜辅菜类</text><text x="135.0" y="131.3163070321965" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥10,539</text><rect x="190" y="185.97416253440494" width="50" height="44.02583746559506" fill="#F39C12" rx="3"/><text x="215.0" y="245" text-anchor="middle" font-size="11" fill="#555">主食类</text><text x="215.0" y="180.97416253440494" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥4,952</text><rect x="270" y="192.38446670329756" width="50" height="37.61553329670245" fill="#8E44AD" rx="3"/><text x="295.0" y="245" text-anchor="middle" font-size="11" fill="#555">粮油调味</text><text x="295.0" y="187.38446670329756" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥4,231</text><rect x="350" y="225.8841064620756" width="50" height="4.115893537924384" fill="#7F8C8D" rx="3"/><text x="375.0" y="245" text-anchor="middle" font-size="11" fill="#555">低值易耗</text><text x="375.0" y="220.8841064620756" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥463</text><rect x="430" y="226.3819251189304" width="50" height="3.6180748810695986" fill="#3498DB" rx="3"/><text x="455.0" y="245" text-anchor="middle" font-size="11" fill="#555">饮品原料</text><text x="455.0" y="221.3819251189304" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥407</text><rect x="510" y="229.97333114338278" width="50" height="0.02666885661722063" fill="#95A5A6" rx="3"/><text x="535.0" y="245" text-anchor="middle" font-size="11" fill="#555">包装类</text><text x="535.0" y="224.97333114338278" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">¥3</text></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📋 分类汇总表</h2>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>科目代码</th>
+                        <th>科目名称</th>
+                        <th class="text-right">明细条数</th>
+                        <th class="text-right">金额合计</th>
+                        <th class="text-right">金额占比</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><code>1403.01.01</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#E74C3C;border-radius:2px;margin-right:6px;"></span>荤食类</td>
+                        <td class="text-right">330</td>
+                        <td class="text-right">¥23,623.06</td>
+                        <td class="text-right">53.42%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.02</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#27AE60;border-radius:2px;margin-right:6px;"></span>蔬菜辅菜类</td>
+                        <td class="text-right">609</td>
+                        <td class="text-right">¥10,538.55</td>
+                        <td class="text-right">23.83%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.03</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#F39C12;border-radius:2px;margin-right:6px;"></span>主食类</td>
+                        <td class="text-right">146</td>
+                        <td class="text-right">¥4,952.50</td>
+                        <td class="text-right">11.20%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.04</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#8E44AD;border-radius:2px;margin-right:6px;"></span>粮油调味</td>
+                        <td class="text-right">62</td>
+                        <td class="text-right">¥4,231.40</td>
+                        <td class="text-right">9.57%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.05</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#3498DB;border-radius:2px;margin-right:6px;"></span>饮品原料</td>
+                        <td class="text-right">10</td>
+                        <td class="text-right">¥407.00</td>
+                        <td class="text-right">0.92%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.06</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#95A5A6;border-radius:2px;margin-right:6px;"></span>包装类</td>
+                        <td class="text-right">1</td>
+                        <td class="text-right">¥3.00</td>
+                        <td class="text-right">0.01%</td>
+                    </tr>
+                    <tr>
+                        <td><code>1403.01.07</code></td>
+                        <td><span style="display:inline-block;width:10px;height:10px;background:#7F8C8D;border-radius:2px;margin-right:6px;"></span>低值易耗</td>
+                        <td class="text-right">9</td>
+                        <td class="text-right">¥463.00</td>
+                        <td class="text-right">1.05%</td>
+                    </tr>
+                    <tr style="background:#f8f9fa;font-weight:bold;">
+                        <td colspan="2">合计</td>
+                        <td class="text-right">1167</td>
+                        <td class="text-right">¥44,218.51</td>
+                        <td class="text-right">100.00%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🛒 各科目商品明细（TOP10）</h2>
+        
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#E74C3C;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#E74C3C;border-radius:3px;margin-right:8px;"></span>
+            荤食类（1403.01.01）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 330 条明细，金额 ¥23,623.06
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">三黄鸡-杀净</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥2,728.32</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">11.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">牛肉</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥2,499.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">10.6%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">打氧中大虾30-35头</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥2,150.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">9.1%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">番鸭（杀净）</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥1,948.70</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">8.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">鲜鸡蛋*360个*件</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥1,432.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">6.1%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">牛碎腩</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥1,073.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">猪脚</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥937.30</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.0%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">大海罗非鱼</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥840.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.6%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">五花肉片</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥821.55</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">黄骨鱼（杀净）</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥749.70</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.2%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#27AE60;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#27AE60;border-radius:3px;margin-right:8px;"></span>
+            蔬菜辅菜类（1403.01.02）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 609 条明细，金额 ¥10,538.55
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">红尖椒（海南）</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥497.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.7%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">黄芽白</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥445.06</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">蒜肉</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥410.04</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.9%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">去皮完整香芋</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥370.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">宁夏菜心</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥367.14</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">外地凉瓜</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥357.79</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.4%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">去皮莴笋加工</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥336.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">外地豆角</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥310.04</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.9%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">外地西兰花</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥262.15</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">外地丝瓜</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥261.60</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.5%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#F39C12;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#F39C12;border-radius:3px;margin-right:8px;"></span>
+            主食类（1403.01.03）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 146 条明细，金额 ¥4,952.50
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">洪峰月金丝香米25kg*包</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥2,480.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">50.1%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">葡式三文治</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥391.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">7.9%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">三全大油条800g*包</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥264.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">5.3%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">优发河粉</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥212.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.3%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">中山香山米粉*30包*袋</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥210.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">金元宝优选莲花香米15kg</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥156.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.1%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">带皮玉米棒</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥153.03</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.1%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">冬菇青菜包6个</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥144.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.9%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">河粉</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥119.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.4%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">安井烧卖2.5kg*包</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥96.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">1.9%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#8E44AD;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#8E44AD;border-radius:3px;margin-right:8px;"></span>
+            粮油调味（1403.01.04）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 62 条明细，金额 ¥4,231.40
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">福之泉食用调和油20升/桶</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥1,750.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">41.4%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">风车生粉25kg</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥285.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">6.7%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">金穗牌沙茶酱20KG/桶</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥283.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">6.7%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">微厨辣椒油4.3L</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥195.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.6%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">海天酱油4.9L*2</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥192.50</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">中邦桂林辣椒酱6kg</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥186.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.4%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">20升元宝调和油</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥176.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">普宁豆酱800g*6</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥151.20</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.6%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">家乐鸡鲜粉调味料450g*包</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥150.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">莲花味精1kg*10</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥128.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">3.0%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#3498DB;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#3498DB;border-radius:3px;margin-right:8px;"></span>
+            饮品原料（1403.01.05）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 10 条明细，金额 ¥407.00
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">伊利纯牛奶250ml*16盒*件</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥168.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">41.3%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">伊利草莓优酸乳1*24*件</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥74.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">18.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">谷粒多黑谷牛奶饮品
+250ml1*16盒*件</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥70.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">17.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">维他奶原味24瓶*件</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥52.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">12.8%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">雀巢三花淡奶410g</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥32.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">7.9%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">金牌高达椰浆400ml*24</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥11.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">2.7%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#95A5A6;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#95A5A6;border-radius:3px;margin-right:8px;"></span>
+            包装类（1403.01.06）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 1 条明细，金额 ¥3.00
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">大白色打包袋30厘米*45厘米
+*扎</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥3.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">100.0%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-bottom:24px;">
+        <h3 style="color:#7F8C8D;margin:0 0 10px 0;font-size:16px;">
+            <span style="display:inline-block;width:12px;height:12px;background:#7F8C8D;border-radius:3px;margin-right:8px;"></span>
+            低值易耗（1403.01.07）
+        </h3>
+        <p style="margin:0 0 10px 0;color:#666;font-size:13px;">
+            共 9 条明细，金额 ¥463.00
+        </p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8f9fa;">
+                    <th style="padding:8px 10px;text-align:left;border-bottom:2px solid #dee2e6;">商品名称</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">金额</th>
+                    <th style="padding:8px 10px;text-align:right;border-bottom:2px solid #dee2e6;">占比</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">新配方浓缩洗洁精20kg</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥288.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">62.2%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">围裙</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥60.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">13.0%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">长保鲜膜45cm*400米</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥45.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">9.7%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">钢丝球30个*包</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥28.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">6.0%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">亮净快速去重油剂1L</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥21.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.5%</td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;">威猛先生厨房重污清洁剂</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">¥21.00</td>
+            <td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">4.5%</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <div class="card">
+        <h2>🔍 方法说明</h2>
+        <ul style="font-size:13px;color:#555;padding-left:20px;">
+            <li><strong>数据来源：</strong>原始 .xls 文件，共 1171 行（含标题行、表头行）</li>
+            <li><strong>工作表：</strong>第一张工作表，表头位于第2行</li>
+            <li><strong>字段映射：</strong>商品名称（第5列）、金额（第9列）、日期（第2列）</li>
+            <li><strong>分类标准：</strong>7个固定科目（荤食类、蔬菜辅菜类、主食类、粮油调味、饮品原料、包装类、低值易耗）</li>
+            <li><strong>分类方式：</strong>基于商品名称语义理解，按商品本质用途归类</li>
+            <li><strong>校验结果：</strong>分类金额合计 = 原始金额合计，差额 0 元</li>
+            <li><strong>需人工复核：</strong>0 项（全部商品已高置信度分类）</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>本报告由 delivery-xlsx 技能自动生成 · 生成时间：2026-08-02 20:09:31</p>
+    </div>
+</div>
+</body>
+</html>

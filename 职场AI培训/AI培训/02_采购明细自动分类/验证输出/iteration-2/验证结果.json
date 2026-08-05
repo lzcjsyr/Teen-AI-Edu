@@ -1,0 +1,173 @@
+{
+  "detail_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/饭堂4月进货明细_已分类.xlsx",
+  "summary_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/饭堂4月进货明细_分类汇总.xlsx",
+  "html_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/饭堂4月进货明细_分类分析.html",
+  "sheet": "Sheet1",
+  "sheet_names": [
+    "Sheet1"
+  ],
+  "header_row_excel": 2,
+  "data_start_row_excel": 3,
+  "data_end_row_excel": 1172,
+  "total_row_excel": 1173,
+  "columns_excel": {
+    "item_name": 5,
+    "amount": 9
+  },
+  "detail_rows": 1170,
+  "unique_items": 211,
+  "category_count": 7,
+  "summary": {
+    "荤食类": {
+      "code": "1403.01.01",
+      "count": 330,
+      "amount": 23623.06
+    },
+    "蔬菜辅菜类": {
+      "code": "1403.01.02",
+      "count": 609,
+      "amount": 10538.55
+    },
+    "主食类": {
+      "code": "1403.01.03",
+      "count": 149,
+      "amount": 4952.5
+    },
+    "粮油调味": {
+      "code": "1403.01.04",
+      "count": 62,
+      "amount": 4231.4
+    },
+    "饮品原料": {
+      "code": "1403.01.05",
+      "count": 10,
+      "amount": 407.0
+    },
+    "包装类": {
+      "code": "1403.01.06",
+      "count": 1,
+      "amount": 3.0
+    },
+    "低值易耗": {
+      "code": "1403.01.07",
+      "count": 9,
+      "amount": 463.0
+    }
+  },
+  "amount_sum": 44218.51,
+  "input_total": 44218.51,
+  "reconciliation_diff": 0.0,
+  "amount_anomaly_count": 3,
+  "review_unique_item_count": 0,
+  "skipped_rows": [],
+  "anomalies": [
+    {
+      "source_row": 603,
+      "name": "带皮玉米棒",
+      "reason": "金额原值为 ' '，无法解析；按 0 计入对账"
+    },
+    {
+      "source_row": 1069,
+      "name": "带皮玉米棒",
+      "reason": "金额原值为 ' '，无法解析；按 0 计入对账"
+    },
+    {
+      "source_row": 1110,
+      "name": "红心番薯",
+      "reason": "金额原值为 ' '，无法解析；按 0 计入对账"
+    }
+  ],
+  "external_network_dependencies": false,
+  "rules_file": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/skills/delivery-xlsx/references/classification_rules.md",
+  "mapping_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/分类映射.json",
+  "structure_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/结构检查.json",
+  "reference_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/参考成果/饭堂4月进货明细_已分类.xlsx",
+  "reference_sheet": "已分类明细",
+  "reference_header_row_excel": 2,
+  "reference_data_start_row_excel": 3,
+  "reference_data_end_row_excel": 1172,
+  "reference_total_row_excel": 1173,
+  "reference_unique_items": 211,
+  "matched_reference_unique_items": 211,
+  "new_unique_items": 0,
+  "new_item_names": [],
+  "classification_difference_count": 0,
+  "classification_differences": [],
+  "reference_mapping_conflicts": [],
+  "reference_summary": {
+    "荤食类": {
+      "code": "1403.01.01",
+      "count": 330,
+      "amount": 23623.06
+    },
+    "蔬菜辅菜类": {
+      "code": "1403.01.02",
+      "count": 609,
+      "amount": 10538.55
+    },
+    "主食类": {
+      "code": "1403.01.03",
+      "count": 149,
+      "amount": 4952.5
+    },
+    "粮油调味": {
+      "code": "1403.01.04",
+      "count": 62,
+      "amount": 4231.4
+    },
+    "饮品原料": {
+      "code": "1403.01.05",
+      "count": 10,
+      "amount": 407.0
+    },
+    "低值易耗": {
+      "code": "1403.01.07",
+      "count": 9,
+      "amount": 463.0
+    },
+    "包装类": {
+      "code": "1403.01.06",
+      "count": 1,
+      "amount": 3.0
+    }
+  },
+  "current_summary": {
+    "荤食类": {
+      "code": "1403.01.01",
+      "count": 330,
+      "amount": 23623.06
+    },
+    "蔬菜辅菜类": {
+      "code": "1403.01.02",
+      "count": 609,
+      "amount": 10538.55
+    },
+    "主食类": {
+      "code": "1403.01.03",
+      "count": 149,
+      "amount": 4952.5
+    },
+    "粮油调味": {
+      "code": "1403.01.04",
+      "count": 62,
+      "amount": 4231.4
+    },
+    "饮品原料": {
+      "code": "1403.01.05",
+      "count": 10,
+      "amount": 407.0
+    },
+    "低值易耗": {
+      "code": "1403.01.07",
+      "count": 9,
+      "amount": 463.0
+    },
+    "包装类": {
+      "code": "1403.01.06",
+      "count": 1,
+      "amount": 3.0
+    }
+  },
+  "comparison_path": "/Users/dielangli/Desktop/职场AI培训/AI培训/02_采购明细自动分类/验证输出/iteration-2/参考分类对比.json",
+  "reference_external_network_dependencies": false
+}

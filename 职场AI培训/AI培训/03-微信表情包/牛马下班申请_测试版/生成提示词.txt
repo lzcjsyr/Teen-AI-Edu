@@ -1,0 +1,9 @@
+Use case: illustration-story
+Asset type: WeChat custom animated sticker storyboard, to be cut into GIF frames
+Primary request: original round-faced overworked office worker "little ox-horse" (cute chubby head, tiny dull ox horns, dark eye-bags, name-tag lanyard, light-blue shirt collar) reacting "thinking he can leave at six but gets pinned back to his seat by an urgent task" in four beats: panel 1, he slumps exhausted in his office chair staring blankly at a laptop with messy hair and dark eye-bags; panel 2, he snaps his head up eyes wide and glowing pointing at a wall clock showing 6:00 with a face of disbelieving joy; panel 3, he springs up off the chair hands thrown above his head feet off the ground grinning with pure celebration; panel 4, a huge hand labelled "URGENT TASK" presses him back down into the chair from above his face instantly deflating mouth turned down with a shock mark.
+Style/medium: original polished 2D Chinese chat-sticker illustration, bold clean outlines, high-contrast flat colours, highly expressive face.
+Composition/framing: one perfectly regular 2 by 2 storyboard grid; four equal square panels separated by PURE WHITE #FFFFFF gaps (NO divider lines, NO gray lines); same character scale, viewpoint and placement; generous padding so the character never touches panel edges or the gaps.
+Scene/backdrop: PERFECTLY FLAT SOLID PURE WHITE #FFFFFF BACKGROUND IN EVERY PANEL; character floats on pure white; no desk, floor, gradients, shadows, reflections, texture, decorative borders, or panel labels.
+Text (verbatim): "六点！" in panel 2; "收到…" in panel 4; NONE in panels 1 and 3
+Text design: large, bold, high-contrast Chinese lettering in a clear empty area; text must be correct and legible at 240 by 240 pixels.
+Constraints: each panel is a distinct sequential pose; preserve character identity; NO WATERMARK; no "图片由AI生成" mark; no logos; no other characters unless the story needs them.

@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-07-16T07:39:13.286Z",
+  "source": "WorkBuddyGuide/docs/bluebook",
+  "moduleCount": 17,
+  "modules": [
+    {
+      "folder": "01_第一篇使用手册",
+      "route": "01_manual",
+      "title": "第一篇 使用手册：先把 WorkBuddy 用起来",
+      "kind": "collection",
+      "chapterCount": 11
+    },
+    {
+      "folder": "11_办公三件套",
+      "route": "11_case_office-suite",
+      "title": "第 11 章 办公三件套：Word、Excel、PPT",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "12_整理桌面文件",
+      "route": "12_case_file-organizing",
+      "title": "第 12 章 从整理桌面文件这些小事做起",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "13_远程控制电脑",
+      "route": "13_case_remote-control",
+      "title": "第 13 章 远程控制你的电脑，不用发愁不在电脑前",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "14_生活助手",
+      "route": "14_case_life-assistant",
+      "title": "第 14 章 生活助手的价值，是减少琐碎",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "15_资讯整合每日通知",
+      "route": "15_case_information-feed",
+      "title": "第 15 章 资讯整合：把信息流变成每日通知",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "16_知识管理",
+      "route": "16_case_knowledge-management",
+      "title": "第 16 章 收藏不是知识管理，能再次用起来才是",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "17_会议后续工作",
+      "route": "17_case_meeting-followup",
+      "title": "第 17 章 会议结束不是终点，工作才刚刚开始",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "18_投资分析",
+      "route": "18_case_investment-analysis",
+      "title": "第 18 章 把投资分析变成你的日常",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "19_人工智能视频团队",
+      "route": "19_case_ai-video-team",
+      "title": "第 19 章 一句话召唤 AI 视频团队",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "20_自媒体增长闭环",
+      "route": "20_case_creator-growth",
+      "title": "第 20 章 自媒体不只是靠努力，而是一条增长闭环",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "21_生成式引擎优化",
+      "route": "21_case_geo",
+      "title": "第 21 章 WorkBuddy也能做GEO专家",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "22_打造技能",
+      "route": "22_advanced_skill-building",
+      "title": "第 22 章 打造skill：将书和视频蒸馏为可执行 Skill",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "23_实操案例集",
+      "route": "23_advanced_examples",
+      "title": "第 23 章 其他用法补充：WorkBuddy 实操案例集",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "24_多智能体系统设计",
+      "route": "24_advanced_multi-agent",
+      "title": "第 24 章 如何进行多 Agent 系统设计",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "25_自动化工作流可靠性",
+      "route": "25_advanced_reliable-automation",
+      "title": "第 25 章 自动化工作流的可靠性",
+      "kind": "case",
+      "chapterCount": 1
+    },
+    {
+      "folder": "26_第四篇岗位与行业落地",
+      "route": "26_industry-roadmaps",
+      "title": "第四篇 岗位与行业落地",
+      "kind": "collection",
+      "chapterCount": 2
+    }
+  ]
+}
