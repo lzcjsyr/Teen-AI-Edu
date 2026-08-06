@@ -1,0 +1,144 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>案例五｜微信表情包（三步：先定角色 → 再写剧情 → 最后出 GIF · 纯对话版）</title><style>
+:root{--bg:#f6f4ec;--paper:#1c2a22;--gold:#a9852f;--green:#2c7770;--muted:#62716a;--line:#c9d2cc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper);font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:17px}
+.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:3;display:grid;gap:6px}
+.nav a{font:13px ui-monospace,monospace;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 9px;background:#fffdf7}
+.nav a.active,.nav a:hover{background:var(--green);color:#fff}
+.course-page{min-height:100vh;padding:60px max(9vw,30px);border-bottom:1px solid var(--line);display:grid;align-content:center}
+.inner{max-width:1080px}.num,.eyebrow{font:14px ui-monospace,monospace;letter-spacing:.1em;color:var(--green)}
+h1{font-size:clamp(40px,6.4vw,84px);letter-spacing:-.06em;line-height:1.05;margin:15px 0 30px}.subtitle{font-size:clamp(19px,2.6vw,27px);color:var(--muted);line-height:1.5;margin:0 0 24px;font-weight:400}
+.lead{font-size:21px;line-height:1.8;color:var(--muted);max-width:840px}
+.route{display:grid;grid-template-columns:1fr 36px 1fr 36px 1fr;gap:10px;align-items:center;margin:20px 0}
+.route div{background:#eef6f1;border:1px solid #b9d3cd;padding:22px;line-height:1.75;color:var(--paper)}
+.route b{color:var(--green)}
+.arrow{text-align:center;color:var(--gold);font-size:30px}
+.prompt{white-space:pre-wrap;background:#fffdf7;border:1px solid var(--line);padding:28px;color:var(--paper);font:15px/1.8 ui-monospace,monospace}
+.copy{border:1px solid var(--green);background:#f2faf5;color:#215d58;padding:11px 16px;margin:14px 0;cursor:pointer;font-size:16px}
+.copy:hover{background:#d9eee5}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid div{padding:22px;border-top:4px solid var(--gold);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}.grid2 div{padding:22px;border-top:4px solid var(--green);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.beats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+.beats div{padding:18px;border-top:5px solid var(--green);background:#fffdf7;line-height:1.7;color:var(--paper);font-size:16px}
+.beats b{color:var(--green);display:block;margin-bottom:6px}
+.warning{margin-top:28px;border-left:5px solid var(--gold);padding:18px 22px;background:#fbf0d4;line-height:1.85;color:var(--paper);font-size:16.5px}
+.note{background:#eef6f1;border:1px solid #b9d3cd;color:var(--paper);padding:18px 22px;line-height:1.85;margin-top:20px;font-size:16.5px}
+.badge{display:inline-block;border:1px solid var(--green);color:var(--green);border-radius:20px;padding:4px 14px;font:13px ui-monospace,monospace;margin-right:8px}
+.stepno{font:13px ui-monospace,monospace;color:var(--gold);display:block;letter-spacing:.08em;margin-bottom:4px}
+.kv{font:14px ui-monospace,monospace;color:var(--muted)}
+.check{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.check div{padding:20px;border-top:4px solid var(--gold);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.check b{color:var(--gold)}
+.gifs{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:28px}
+.gifs figure{margin:0;background:#fffdf7;border:1px solid var(--line);padding:18px 18px 12px;text-align:center}
+.gifs img{width:160px;height:160px;border:1px solid var(--line);background:#fff;object-fit:contain;display:inline-block}
+.gifs figcaption{font-size:17px;color:var(--green);padding:12px 2px 4px;line-height:1.7;font-weight:500}
+.cap{color:var(--muted);font-size:16px;margin-top:10px;line-height:1.8}
+</style></head><body><nav class="nav" aria-label="页码导航"><a href="#p1">01</a><a href="#p2">02</a><a href="#p3">03</a><a href="#p4">04</a><a href="#p5">05</a><a href="#p6">06</a></nav><main>
+
+<section class="course-page" id="p1"><div class="inner">
+<div class="num">第 01 页 / 共 06 页 · 案例五</div>
+<div class="eyebrow">不装技能包 · 不写代码 · 纯对话</div>
+<h1>三步做出<br>会传播的表情包。</h1>
+<p class="lead">先定<strong>角色</strong>，再写<strong>剧情</strong>，最后直接<strong>出 GIF</strong>。全程只用对话和 AI 内置的图片生成能力，做出来的动图发到微信就能用。下面这四套，就是这套流程跑出来的真实成品：</p>
+<div class="gifs">
+<figure><img src="gifs/周一续命咖啡.gif" alt="周一续命咖啡"><figcaption>周一续命咖啡<br><span class="kv">续命中 → 满血！→ 开会？→ 没电了</span></figcaption></figure>
+<figure><img src="gifs/海獭懂了.gif" alt="海獭懂了"><figcaption>海獭懂了<br><span class="kv">点头 · 恍然大悟 · 摸鱼式认同</span></figcaption></figure>
+<figure><img src="gifs/牛马只有工作群.gif" alt="牛马只有工作群"><figcaption>牛马只有工作群<br><span class="kv">牛群 · 马群 · 工作群 · 收到！</span></figcaption></figure>
+<figure><img src="gifs/老板离谱决策.gif" alt="老板离谱决策"><figcaption>老板离谱决策<br><span class="kv">震惊 → 无语 → 灵魂出窍</span></figcaption></figure>
+</div>
+<p class="cap">动图表情的传播密码：<strong>角色认得出 + 剧情一眼懂 + 循环接得上</strong>。三步正是按这个顺序设计的——先有灵魂，再有故事，最后才有作品。</p>
+<div class="route">
+<div><span class="stepno">第一步</span><b>生成核心角色</b><br>一句话锁死主角形象</div>
+<span class="arrow">→</span><div><span class="stepno">第二步</span><b>定四格剧情</b><br>铺垫 · 触发 · 包袱 · 循环</div>
+<span class="arrow">→</span><div><span class="stepno">第三步</span><b>直接出 GIF</b><br>逐张生成四格，自动拼成动图</div>
+</div>
+</div></section>
+
+<section class="course-page" id="p2"><div class="inner">
+<div class="num">第 02 页 / 共 06 页</div>
+<h1>就三步：<br>定角色 → 写剧情 → 出 GIF</h1>
+<p class="lead">不装技能包、不写代码、不用注册任何工具，全程纯对话，跟着三步走：</p>
+<div class="grid">
+<div><span class="stepno">第一步</span><b>生成核心角色</b><br>一句话锁死主角形象（物种 / 画风 / 配色），后面每一步都原样复制这段描述，形象才不会跑偏。</div>
+<div><span class="stepno">第二步</span><b>定四格剧情</b><br>铺垫 → 触发 → 包袱 → 循环。最后一格要能接回第一格，动图循环才顺。</div>
+<div><span class="stepno">第三步</span><b>直接出 GIF</b><br>把第二步的四格图发给 AI，让它调用代码合成循环 GIF，发微信就能用。</div>
+</div>
+</div></section>
+
+<section class="course-page" id="p3"><div class="inner">
+<div class="num">第 03 页 / 共 06 页</div>
+<h1>第一步：<br>先生成核心角色。</h1>
+<p class="lead">表情包的灵魂是<strong>角色</strong>。先把主角定下来，后面所有表情都从这一个角色派生，形象才不会跑偏。重点是：<strong>这段角色描述要能一句话复制</strong>——之后的每一步都原样贴上它。</p>
+<button class="copy" data-copy="prompt1">复制提示词</button><pre class="prompt" id="prompt1">请生成一张微信表情包的原创主角设定图：
+
+【角色】绘本插画风的牛马打工人吉祥物，圆润可爱的身形，头身比约 1:1：头顶两侧一对浅棕色小牛角，牛角前方一对尖尖立起的白色马耳朵，后脑垂下一大缕蓬松飘逸的棕色马鬃毛，微微拉长的圆脸带圆润鼻吻，黑豆大眼，脸颊两团红晕，眼神疲惫又带一丝阴阳怪气的嘲讽，身穿墨绿色工装马甲配背带裤，小圆蹄手
+【画风】精致绘本厚涂风：细腻水粉笔触、柔和光影、暖色系、画质精致不粗糙
+【构图】全身像，正面站立，居中，四周留白
+【背景】背景必须是纯白 #FFFFFF：不能是米色、米黄、乳白，不能有纸张纹理或暖色调，画面四角都要是纯白；不要任何家具、地板、阴影
+【要求】关闭水印：画面不要出现任何水印、角标、Logo 或平台标识；角色穿鲜艳的彩色衣服（不能是白色或浅色），画面里不要出现任何文字</pre>
+</div></section>
+
+<section class="course-page" id="p4"><div class="inner">
+<div class="num">第 04 页 / 共 06 页</div>
+<h1>第二步：<br>再定四格剧情。</h1>
+<p class="lead">角色定了，给它写一个<strong>四格小故事</strong>：一格一个动作、一格一句话。动图是循环播放的，所以故事要能「接回第一格」。</p>
+<div class="beats">
+<div><b>1 铺垫</b>角色正处在什么日常情境<br>例：瘫在工位上刷手机</div>
+<div><b>2 触发</b>发生什么，让人有反应<br>例：看到需求文档，白眼翻上天</div>
+<div><b>3 包袱</b>动作反转，形成笑点<br>例：会议邀请弹窗，歪嘴冷笑</div>
+<div><b>4 循环</b>最后一格接回第一格<br>例：看完工资条，瘫回第一格的样子</div>
+</div>
+<p class="lead" style="margin-top:30px">把第一步的角色描述原样复制进来，再贴上四格剧情：</p>
+<button class="copy" data-copy="prompt2">复制提示词</button><pre class="prompt" id="prompt2">继续用上一步的主角（绘本插画风牛马打工人：小牛角 + 白马耳 + 棕色马鬃、黑豆大眼、墨绿色工装马甲），设计四格动图剧情：
+
+【画风】精致绘本厚涂风：细腻笔触、柔和光影、暖色系
+【背景】四张图每一张都必须是纯白底 #FFFFFF：不能米黄、乳白、纸纹、暖色调，四角必须纯白；无家具、地板、阴影
+
+【剧情】
+第1格（铺垫）：一头奶牛被一群小牛崽围着，温馨幸福，字幕「牛群」
+第2格（触发）：一匹骏马被一群小马崽围着，撒欢快乐，字幕「马群」
+第3格（包袱）：镜头切到主角——牛马打工人独自举着手机，被一圈工作群消息气泡包围，身边没有朋友，生无可恋，字幕「工作群」
+第4格（循环）：牛马打工人低头盯着手机屏幕，可怜兮兮地伸手回复，只能在工作群里喊「收到」，字幕「收到！」
+
+【要求】关闭水印：画面不要出现任何水印、角标、Logo 或平台标识；每一张图背景都要纯白、四角纯白；字幕每格 ≤6 字；去掉字幕动作也能看懂。注意：第1、2格是真牛真马（各有自己的群），第3、4格才是牛马打工人（只有工作群，只能喊「收到」）——这个对比才是梗</pre>
+</div></section>
+
+<section class="course-page" id="p5"><div class="inner">
+<div class="num">第 05 页 / 共 06 页</div>
+<h1>第三步：<br>让 AI 合成 GIF。</h1>
+<p class="lead">第二步已经生成了带字幕的四格图。第三步只差一步：把下面这段提示词发给 AI，它会<strong>调用代码工具</strong>把四张图合成循环 GIF。</p>
+<button class="copy" data-copy="prompt3">复制提示词</button><pre class="prompt" id="prompt3">把上一步生成的四张表情图按顺序合成一张循环播放的 GIF，并用代码实现，不要只给描述。
+
+要求：
+1. 按 1→2→3→4 的顺序合成
+2. 统一缩放到微信表情标准尺寸 240×240
+3. 循环播放：每帧显示 0.5 秒，最后一格停 1.5 秒再回到第一格，形成「结束感」
+4. 文件大小 ≤ 500 KB</pre>
+<p class="lead" style="margin-top:28px">AI 会调用代码完成：检查白底 → 按顺序拼帧 → 导出 GIF。你只管复制、检查、发微信。</p>
+<div class="grid2">
+<div><span class="stepno">自动完成</span><b>AI 用代码帮你干的三件事</b><br>① 检查每张四角纯白 → ② 按顺序合成 GIF（240×240）→ ③ 报出文件大小给你验收。</div>
+<div><span class="stepno">关键参数</span><b>微信表情的硬指标</b><br>最大边长 240×240 · 文件 ≤ 500 KB · 循环播放 · 最后一格停 1.5 秒形成「结束感」。</div>
+</div>
+<div class="check">
+<div><b>检查 1</b><br>四格字幕的笔画都正确吗？有缺笔画、错字就回到第二步重生成那一格。</div>
+<div><b>检查 2</b><br>GIF 循环顺不顺？第 4 格接第 1 格，能看出「又开始了」？</div>
+<div><b>检查 3</b><br>发到微信 → 长按 GIF → 选择「添加到表情」→ 斗图试试！</div>
+</div>
+</div></section>
+
+<section class="course-page" id="p6"><div class="inner">
+<div class="num">第 06 页 / 共 06 页</div>
+<h1>课后练习：<br>换个角色，再来一遍</h1>
+<p class="lead">把第一步的角色换掉、第二步的剧情换掉，其余完全不动，重新走完三步，你就真正学会做表情包了。下面几个方向都可以试：</p>
+<div class="grid">
+<div><span class="stepno">换角色</span><b>猫、狗、熊猫、打工兔</b><br>圆滚滚的、胖乎乎的、脸越垮越好，动物打工人最容易出圈。</div>
+<div><span class="stepno">换剧情</span><b>吐槽加班 / 开会 / 周一</b><br>「明天就周五」「已读不回」「需求又改了」……都是现成的梗。</div>
+<div><span class="stepno">换文字</span><b>字幕只改 2～6 个字</b><br>同一个角色、同一套动作，换个字幕就是另一张表情。批量出图的诀窍就在这里。</div>
+</div>
+<p class="lead" style="margin-top:26px">做完后，欢迎把成品发到微信群里斗一圈，看看谁的图被转得最多 👏</p>
+</div></section>
+
+</main><script>
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.copy;var t=document.getElementById(id);var txt=t.innerText.replace(/\u3000/g,' ');navigator.clipboard.writeText(txt).then(function(){b.textContent='已复制 ✓';setTimeout(function(){b.textContent='复制提示词';},1600);});});});
+window.addEventListener('scroll',function(){var a=document.querySelectorAll('.nav a');var y=window.scrollY+innerHeight/2;a.forEach(function(x){var s=document.querySelector(x.getAttribute('href'));x.classList.toggle('active',s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y);});});
+</script></body></html>
