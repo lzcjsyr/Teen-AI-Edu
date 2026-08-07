@@ -1,11 +1,62 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>案例一｜年会抽奖网页</title><style>
-:root{--bg:#160f0b;--paper:#fff7e7;--gold:#e9b65c;--red:#b33123;--muted:#cbbda9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper);font-family:"Noto Serif CJK SC","Songti SC",serif}.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:2;display:grid;gap:5px}.nav a{font:12px ui-monospace,monospace;color:var(--muted);text-decoration:none;border:1px solid #654c30;padding:5px 7px;background:#160f0bcc}.nav a.active,.nav a:hover{background:var(--gold);color:#241207}.course-page{min-height:100vh;padding:60px max(9vw,30px);display:grid;align-content:center;border-bottom:1px solid #493522}.inner{max-width:980px}.num,.eyebrow{font:12px ui-monospace,monospace;letter-spacing:.1em;color:var(--gold)}h1{font-size:clamp(38px,6.5vw,82px);letter-spacing:-.06em;line-height:1.04;margin:15px 0 28px}.lead{font-size:20px;line-height:1.75;color:var(--muted);max-width:780px}.map{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#70583c;border:1px solid #70583c}.map div{padding:22px;background:#24170f}.map b{display:block;color:var(--gold);font:14px ui-monospace,monospace;margin-bottom:10px}.check{columns:2;gap:30px;padding:0}.check li{margin:12px 0;line-height:1.5}.prompt{white-space:pre-wrap;line-height:1.7;background:#0c0907;border:1px solid #70583c;padding:25px;font:15px/1.7 ui-monospace,monospace;color:#f7e6c5;max-width:900px}.copy{margin:12px 0;padding:9px 13px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer}.note{margin-top:28px;border-left:4px solid var(--red);padding:14px 18px;background:#2a140e;line-height:1.65}.files{font:15px ui-monospace,monospace;color:var(--gold)}@media(max-width:700px){.course-page{padding:55px 25px 70px}.map{grid-template-columns:1fr}.check{columns:1}.nav{top:auto;bottom:0;left:0;right:0;transform:none;display:flex;overflow:auto;padding:8px;background:#160f0b}.nav a{flex:0 0 auto}}
-/* 统一浅色学习界面 */
-body{background:#f7f3e9;color:#183039}.nav a{color:#62717a;border-color:#c9d2cc;background:#fffdf7eF}.nav a.active,.nav a:hover{background:#183039;color:#fff}.course-page{border-color:#c9d2cc}.num,.eyebrow{color:#a34e2f}.lead{color:#51636c}.map{background:#d8c9ae;border-color:#d8c9ae}.map div{background:#fffdf7;color:#183039}.prompt{background:#fffaf0;border-color:#c9bba0;color:#183039}.note{background:#f8e4d6;border-left-color:#c95a37;color:#183039}.files{color:#765219}.copy{border-color:#9b4c30;color:#803c26;background:#fff8ed}.copy:hover{background:#f5dccd}
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>案例一｜年会抽奖网页（从一份名单，到一个现场网页）</title><style>
+:root{--bg:#f6f4ec;--paper:#1c2a22;--gold:#a9852f;--green:#2c7770;--muted:#62716a;--line:#c9d2cc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--paper);font-family:"Noto Serif CJK SC","Songti SC",serif;font-size:17px}
+.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:3;display:grid;gap:6px}
+.nav a{font:13px ui-monospace,monospace;color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 9px;background:#fffdf7}
+.nav a.active,.nav a:hover{background:var(--green);color:#fff}
+.course-page{min-height:100vh;padding:60px max(9vw,30px);border-bottom:1px solid var(--line);display:grid;align-content:center}
+.inner{max-width:1080px}.num,.eyebrow{font:14px ui-monospace,monospace;letter-spacing:.1em;color:var(--green)}
+h1{font-size:clamp(40px,6.4vw,84px);letter-spacing:-.06em;line-height:1.05;margin:15px 0 30px}.subtitle{font-size:clamp(19px,2.6vw,27px);color:var(--muted);line-height:1.5;margin:0 0 24px;font-weight:400}
+.lead{font-size:21px;line-height:1.8;color:var(--muted);max-width:840px}
+.route{display:grid;grid-template-columns:1fr 36px 1fr;gap:10px;align-items:center;margin:20px 0;max-width:900px}
+.route div{background:#eef6f1;border:1px solid #b9d3cd;padding:22px;line-height:1.75;color:var(--paper)}
+.route b{color:var(--green)}
+.arrow{text-align:center;color:var(--gold);font-size:30px}
+.prompt{white-space:pre-wrap;background:#fffdf7;border:1px solid var(--line);padding:28px;color:var(--paper);font:15px/1.8 ui-monospace,monospace}
+.copy{border:1px solid var(--green);background:#f2faf5;color:#215d58;padding:11px 16px;margin:14px 0;cursor:pointer;font-size:16px}
+.copy:hover{background:#d9eee5}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid div{padding:22px;border-top:4px solid var(--gold);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}.grid2 div{padding:22px;border-top:4px solid var(--green);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.warning{margin-top:28px;border-left:5px solid var(--gold);padding:18px 22px;background:#fbf0d4;line-height:1.85;color:var(--paper);font-size:16.5px}
+.note{background:#eef6f1;border:1px solid #b9d3cd;color:var(--paper);padding:18px 22px;line-height:1.85;margin-top:20px;font-size:16.5px}
+.badge{display:inline-block;border:1px solid var(--green);color:var(--green);border-radius:20px;padding:4px 14px;font:13px ui-monospace,monospace;margin-right:8px}
+.stepno{font:13px ui-monospace,monospace;color:var(--gold);display:block;letter-spacing:.08em;margin-bottom:4px}
+.kv{font:14px ui-monospace,monospace;color:var(--muted)}
+.check{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.check div{padding:20px;border-top:4px solid var(--gold);background:#fffdf7;line-height:1.8;color:var(--paper);font-size:16.5px}
+.check b{color:var(--gold)}
+.files{font:15px ui-monospace,monospace;color:var(--gold)}
+.shot{margin:26px 0 0;background:#fffdf7;border:1px solid var(--line);padding:16px 16px 12px;text-align:center}
+.shot img{max-width:min(460px,100%);max-height:460px;object-fit:contain;border:1px solid var(--line);background:#fff;display:inline-block}
+.shot figcaption{font-size:16px;color:var(--green);padding:12px 2px 4px;line-height:1.7;font-weight:500}
+.cap{color:var(--muted);font-size:16px;margin-top:10px;line-height:1.8}
+@media(max-width:700px){body{font-size:16px}.course-page{padding:55px 22px 70px}.grid,.check{grid-template-columns:1fr}.nav{top:auto;bottom:0;left:0;right:0;transform:none;display:flex;overflow:auto;padding:8px;background:var(--bg)}.nav a{flex:0 0 auto}.route{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
 </style></head><body><nav class="nav" aria-label="页码导航"><a href="#p1">01</a><a href="#p2">02</a><a href="#p3">03</a><a href="#p4">04</a><a href="#p5">05</a></nav><main>
-<section class="course-page" id="p1"><div class="inner"><div class="num">第 01 页 / 共 05 页 · 案例一</div><div class="eyebrow">从一份名单，到一个现场网页</div><h1>年会抽奖<br>网页 App</h1><p class="lead">任务：读取 <strong>年会抽奖名单示例.xlsx</strong>，生成可直接打开、可抽奖、可导出中奖名单的活动网页。</p><p class="files">操作材料：年会抽奖名单示例.xlsx · frontend-design Skill</p><p class="lead">开始前阅读 <a href="操作前检查.md">操作前检查</a>，确认样例人数、同名人员处理、离线导出边界与验收值。</p></div></section>
-<section class="course-page" id="p2"><div class="inner"><div class="num">第 02 页 / 共 05 页</div><h1>先看清<br>输入、规则、输出。</h1><div class="map"><div><b>输入</b>根目录的 <strong>年会抽奖名单示例.xlsx</strong><br>字段：姓名、部门、是否参与</div><div><b>规则</b>不参与者不进池；已中奖者不得再次中奖；结果仅保存于当前页面</div><div><b>输出</b><strong>年会抽奖.html</strong><br>可直接双击浏览器打开，并可导出中奖名单</div></div><div class="note">开始前检查：不要把 Excel 放进子文件夹；第一次生成前，根目录不应已有同名 <strong>年会抽奖.html</strong>，避免 AI 误把旧文件当作结果。</div></div></section>
-<section class="course-page" id="p3"><div class="inner"><div class="num">第 03 页 / 共 05 页</div><h1>第一轮：<br>先让它能跑。</h1><button class="copy" data-copy="prompt1">复制完整提示词</button><pre class="prompt" id="prompt1">请读取根目录下的“年会抽奖名单示例.xlsx”，生成一个年会抽奖网页，文件保存为“年会抽奖.html”，可以直接在浏览器打开。
+
+<section class="course-page" id="p1"><div class="inner">
+<div class="num">第 01 页 / 共 05 页 · 案例一</div>
+<div class="eyebrow">从一份名单，到一个现场网页</div>
+<h1>年会抽奖<br>网页 App</h1>
+<p class="lead">任务：读取根目录的<strong>年会抽奖名单.xlsx</strong>，让 AI 生成一个可直接打开、可抽奖、可导出中奖名单的活动网页。全程不装环境、不用服务器，只靠对话。</p>
+<figure class="shot"><img src="抽奖app.png" alt="年会抽奖网页成品截图"></figure>
+</div></section>
+
+<section class="course-page" id="p2"><div class="inner">
+<div class="num">第 02 页 / 共 05 页</div>
+<h1>就两步：<br>先做出来，再调好看。</h1>
+<p class="lead">把名单变成抽奖 App，全程只有两步——先按需求把网页<strong>做出来</strong>，再调用设计 Skill 把外观<strong>调好看</strong>。</p>
+<div class="route">
+<div><span class="stepno">第一步</span><b>根据要求生成 App</b><br>读取年会抽奖名单.xlsx，生成可用的「年会抽奖.html」，先把功能做完整、做可靠。</div>
+<span class="arrow">→</span>
+<div><span class="stepno">第二步</span><b>调优外观</b><br>调用 Workbuddy 里的前端相关 Skills，把页面优化成现场大屏风格。</div>
+</div>
+</div></section>
+
+<section class="course-page" id="p3"><div class="inner">
+<div class="num">第 03 页 / 共 05 页</div>
+<h1>第一轮：<br>先让它能跑。</h1>
+<p class="lead">第一版先保证<strong>功能完整、逻辑可靠</strong>，界面简洁清楚。把下面这段提示词发给 AI：</p>
+<button class="copy" data-copy="prompt1">复制提示词</button><pre class="prompt" id="prompt1">请读取根目录下的“年会抽奖名单.xlsx”，生成一个年会抽奖网页，文件保存为“年会抽奖.html”，可以直接在浏览器打开。
 
 功能要求：
 1. 先从 Excel 中读取名单，把参与抽奖人员直接写进 HTML 代码里，不要做上传入口。
@@ -16,6 +67,30 @@ body{background:#f7f3e9;color:#183039}.nav a{color:#62717a;border-color:#c9d2cc;
 6. 中奖结果只保存在当前页面中，不需要服务器。
 7. 点击“导出中奖名单”时，导出为 Excel 文件，并提醒用户刷新或关闭页面前先导出结果。
 
-第一版先保证功能完整、逻辑可靠，界面简洁清楚。完成后请告诉我生成文件路径，并自行检查该 HTML 是否能直接打开。</pre></div></section>
-<section class="course-page" id="p4"><div class="inner"><div class="num">第 04 页 / 共 05 页</div><h1>验证后，<br>再做现场大屏。</h1><ul class="check"><li>双击 <strong>年会抽奖.html</strong>，页面无需服务器即可打开。</li><li>“是否参与”为“否”的成员不会出现。</li><li>开始后姓名滚动；停止后显示姓名与部门。</li><li>连续抽两次，中奖者不重复。</li><li>导出按钮生成 Excel；刷新前已有明确保存提醒。</li></ul><button class="copy" data-copy="prompt2">复制美化提示词</button><pre class="prompt" id="prompt2">请使用根目录 skills/frontend-design/SKILL.md 中的前端设计 Skill，优化刚才生成的“年会抽奖.html”。保留全部抽奖逻辑，做成【巴洛克】年会现场大屏风格。完成后请实际打开页面检查文字、按钮和抽奖流程是否正常。</pre></div></section>
-<section class="course-page" id="p5"><div class="inner"><div class="num">第 05 页 / 共 05 页</div><h1>迁移练习：<br>改成你的活动。</h1><p class="lead">在已验证的网页基础上，继续追加：<strong>三等奖先抽、一等奖最后抽</strong>，并将视觉风格改为“科技蓝”或“国潮”。</p><div class="note">完成标准：活动规则在页面上可见；每个奖项抽完后不会重复；导出名单能对应奖项；关闭或刷新前仍会提醒保存。</div><p class="files">交付给别人时，只需发送：年会抽奖.html。因为名单已内置，它可脱离 Excel 独立运行。</p></div></section></main><script>const links=[...document.querySelectorAll('.nav a')],pages=[...document.querySelectorAll('.course-page')];const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}),{threshold:.55});pages.forEach(p=>o.observe(p));document.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).innerText);b.textContent='已复制';setTimeout(()=>b.textContent='复制完整提示词',1200)})</script></body></html>
+第一版先保证功能完整、逻辑可靠，界面简洁清楚。完成后请告诉我生成文件路径，并自行检查该 HTML 是否能直接打开。</pre>
+<div class="note">这段提示词的结构可以记下来：<strong>读什么 → 功能要求逐条列 → 验收要求</strong>。后面每个案例都能复用这个骨架。</div>
+</div></section>
+
+<section class="course-page" id="p4"><div class="inner">
+<div class="num">第 04 页 / 共 05 页</div>
+<h1>第二步：<br>让 AI 调优外观。</h1>
+<p class="lead">功能没问题了，直接让 AI 优化界面，做成现场大屏。把下面这段提示词发给 AI：</p>
+<button class="copy" data-copy="prompt2">复制美化提示词</button><pre class="prompt" id="prompt2">请用【前端设计skills，自行替换】，优化刚才生成的“年会抽奖.html”。保留全部抽奖逻辑，做成【巴洛克】年会现场大屏风格。完成后请实际打开页面检查文字、按钮和抽奖流程是否正常。</pre>
+</div></section>
+
+<section class="course-page" id="p5"><div class="inner">
+<div class="num">第 05 页 / 共 05 页</div>
+<h1>迁移练习：<br>改成你的活动。</h1>
+<p class="lead">在已验证的网页基础上继续追加：<strong>三等奖先抽、一等奖最后抽</strong>，并把视觉风格改为“科技蓝”或“国潮”。</p>
+<div class="grid2">
+<div><span class="stepno">先加逻辑</span><b>奖项分级</b><br>分级抽取：三等奖 <strong>5 人</strong>、二等奖 <strong>3 人</strong>、一等奖 <strong>1 人</strong>。按顺序抽取；每个奖项抽完后不再重复。</div>
+<div><span class="stepno">再换皮肤</span><b>改视觉风格</b><br>把风格词从“巴洛克”换成“科技蓝”或“国潮”，其余逻辑保持不变。</div>
+</div>
+<div class="note">完成标准：活动规则在页面上可见；每个奖项抽完后不会重复；导出名单能对应奖项；关闭或刷新前仍会提醒保存。</div>
+<p class="files" style="margin-top:24px">交付给别人时，只需发送：年会抽奖.html。因为名单已内置，它可脱离 Excel 独立运行。</p>
+</div></section>
+
+</main><script>
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.copy;var t=document.getElementById(id);var txt=t.innerText.replace(/\u3000/g,' ');navigator.clipboard.writeText(txt).then(function(){b.textContent='已复制 ✓';setTimeout(function(){b.textContent='复制提示词';},1600);});});});
+window.addEventListener('scroll',function(){var a=document.querySelectorAll('.nav a');var y=window.scrollY+innerHeight/2;a.forEach(function(x){var s=document.querySelector(x.getAttribute('href'));x.classList.toggle('active',s.offsetTop<=y&&s.offsetTop+s.offsetHeight>y);});});
+</script></body></html>
