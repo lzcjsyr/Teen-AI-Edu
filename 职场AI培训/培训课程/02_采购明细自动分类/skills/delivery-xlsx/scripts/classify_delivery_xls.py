@@ -37,7 +37,7 @@ class _XlrdBook(Protocol):
     def sheet_by_index(self, n: int) -> _XlrdSheet: ...
 
 class _XlrdModule(Protocol):
-    def open_workbook(self, filename: str) -> _XlrdBook: ...
+    def open_workbook(self, filename: str, logfile: object = ...) -> _XlrdBook: ...
 
 
 # ---------------------------------------------------------------------------
@@ -80,10 +80,14 @@ def _read(path: Path) -> list[list[object]]:
             xlrd_mod = cast(_XlrdModule, cast("object", importlib.import_module("xlrd")))
         except ImportError:
             raise RuntimeError("读取 .xls 需要 xlrd，请先安装：pip install xlrd") from None
+        # xlrd 的 open_workbook 在函数定义时就把 logfile 默认绑定成了当时的 sys.stdout，
+        # 因此仅重定向 sys.stdout 无法拦截 "OLE2 inconsistency" 一类告警，
+        # 必须显式传入 logfile，否则告警会混进 stdout 污染 JSON 输出。
+        sink = io.StringIO()
         old_out, old_err = sys.stdout, sys.stderr
-        sys.stdout = sys.stderr = io.StringIO()
+        sys.stdout = sys.stderr = sink
         try:
-            wb = xlrd_mod.open_workbook(str(path))
+            wb = xlrd_mod.open_workbook(str(path), logfile=sink)
         finally:
             sys.stdout, sys.stderr = old_out, old_err
         sheet = wb.sheet_by_index(0)
@@ -144,17 +148,32 @@ def cmd_read(input_file: str) -> int:
     return 0
 
 
+# 品名列关键词，按特异性从高到低分层。
+# 分层的原因：像“单位名称”“客户名称”这类列也含“名称”，若只做宽松的子串匹配，
+# 会先命中它们而错过真正的“商品名称”。因此先扫一遍强信号，再退回弱信号。
+_NAME_KEYWORDS: tuple[tuple[str, ...], ...] = (
+    ("商品名称", "货物名称", "物料名称", "存货名称", "产品名称", "品名"),
+    ("商品", "货物", "物料", "存货"),
+    ("名称",),
+)
+
+
 def _suggest_header(rows: list[list[object]]) -> dict[str, int]:
-    """尽力给 AI 一个起点建议；找不到就返回 -1，绝不报错。"""
+    """尽力给 AI 一个起点建议；找不到就返回 -1，绝不报错。
+
+    注意：这里只是"提示"，最终的表头行与品名列必须由 AI 依据样本判断。
+    弱关键词很容易误命中"单位名称"一类列，不可直接采信。
+    """
     for i, row in enumerate(rows):
         if not row:
             continue
-        s = [str(c).strip() for c in row if c is not None]
-        # 常见表头信号：含"商品名称/品名/名称"且非空单元格较多
-        hit = next((j for j, c in enumerate(row)
-                    if c is not None and any(k in str(c) for k in ("商品名称", "品名", "货物名称", "名称"))), -1)
-        if hit >= 0 and len([c for c in s if c]) >= 2:
-            return {"header_row": i, "name_col": hit}
+        if len([c for c in row if c is not None and str(c).strip()]) < 2:
+            continue
+        for tier in _NAME_KEYWORDS:
+            hit = next((j for j, c in enumerate(row)
+                        if c is not None and any(k in str(c) for k in tier)), -1)
+            if hit >= 0:
+                return {"header_row": i, "name_col": hit}
     return {"header_row": -1, "name_col": -1}
 
 
